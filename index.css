@@ -386,7 +386,8 @@ position: relative;
 
     width: 100%;
     
-    height: 1200px;
+    height: 1500px;
+    padding-bottom:30vh;
 }
 
 #interaction .subheading{
@@ -422,10 +423,46 @@ position: relative;
     height:90vh;
     overflow: hidden;
     display: flex;
- align-items: center;
- justify-content: center;  
+    align-items: center;
+    justify-content: center;  
   
 }
+
+
+.Mission_bar{
+    position: absolute;
+    left:2%;
+    top:3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 300px;
+    height: 65px;
+    border: #000000 solid 2px;
+    background-color: #ffffFF;
+    border-radius: 50px;
+    padding-right:2%;
+    font-weight: 600;
+}
+.Mission_num{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#0053FF;
+    border: #000000 solid 2px;
+    border-radius:100%;
+    width:65px;
+    height:65px;
+    margin-left:-10px;
+    font-size:22px;
+    color: #ffffFF;
+   
+   
+}
+
+
+
 
 
 .panel.A{
@@ -525,7 +562,7 @@ position: relative;
 
 .card-content {
     font-weight: 400;
-    font-size: clamp(14px, 0.9vw, 18px);
+    font-size: clamp(14px, 0.9vw, 16px);
     line-height: 200%;
     margin-top: 32px;
     color: #ffffff;
@@ -923,14 +960,14 @@ position: relative;
 
 
 .LOGO_sticky_wrap{
-    margin-top:-250vh;
+    margin-top:-200vh;
     position: relative;
     width:100%;
     height:300vh;
     /* background-color: #FFCE33; */
     display: flex; 
     justify-content: center;
-    z-index:-1;
+    z-index:-1; 
 }
 
 .LOGO {
@@ -1097,6 +1134,7 @@ position: relative;
     height:4000px;
     padding: 5vw;
     background-color: #ffffFF;
+    margin-bottom:300px;
 }
 
 .wegluePhoto{
@@ -1119,6 +1157,7 @@ position: relative;
     position: relative;
     height: 2235px;
     width:100%;
+    
 
 }
 
@@ -1461,7 +1500,7 @@ position: relative;
 .AppVentoGrid.A{
     position: relative;
     height: 742px;
-    padding:4vh;
+    padding:6vh;
 }
 
 .AppVentoGrid p{
@@ -1646,4 +1685,247 @@ position: relative;
     height: auto;
     right:100%;
 
+}
+
+/* --------------------실시간 사용 로그 기록 기능 섹터 */
+
+
+#Real_time_Logging{
+    width:100%;
+    height:1600px;
+    background-color: #ffffFF;
+    padding-top:10%;
+
+}
+
+
+.Real_time_Logging_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 7vh;
+    width:100%;
+    height: 100%;
+
+}
+
+.subheading.RTL{
+    width:100%;
+    left:0;
+    text-align: center;
+
+}
+
+.capy_line.RTL{
+    width:100%;
+    text-align: center;
+    line-height:150%;
+}
+
+.App_RTL_wrap{
+    margin-top:8%;
+    bottom:-10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5vw;
+    width:100%;
+    height:700px;
+}
+
+.App_RTL_wrap img{
+    width:20vw;
+    height:auto;
+}
+
+
+.RTL_disc_text_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:15%;
+    align-items: center;
+    position: absolute;
+    bottom:calc(100% + 3vh);
+    width:120%;
+    height:10vh;
+    text-align: center;
+    font-size: clamp(16px, 1vw, 18px);
+    font-weight: 500;
+    line-height:140%;
+}
+
+/* .RTL_disc_text_box svg {
+    transform:scale(80%);
+} */
+
+.RTL_disc_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    position: relative;
+    
+    max-width:432px;
+    
+    
+    border: #4D4D4D solid 2px;
+    border-radius: 30px;
+    padding-bottom:1.5vw;
+    padding-top:1.5vw;
+}
+.RTL_disc_box.A{
+    justify-content: space-between;
+    bottom:8.7vw;
+   
+    height:auto;
+    aspect-ratio:3/3.1;
+    width:23vw;
+    
+}
+
+.RTL_disc_box.B{
+    justify-content: center;
+    gap:5%;
+    width:23vw;
+    height:auto;
+    aspect-ratio:2/0.9;
+    bottom:-5.8vw;
+ 
+    padding:1vw;
+    padding-top:0.8vh;
+    padding-bottom:0.8vh;
+
+}
+
+.RTL_Button {
+  width: 100%;
+  height: 40%;
+  border-radius: 10px;
+  font-weight:600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.RTL_Button.A {
+  background-color: #0053FF;
+  color: white;
+  border: none;
+}
+
+
+.RTL_Button.B {
+  background-color: white;
+  color: #0053FF;
+  border: 2px solid #4D4D4D;
+}
+
+
+.RTL_disc_box img{
+    
+    width:10vw;
+}
+
+
+
+.RTL_disc_box_bottom{
+    display: flex;
+    /* justify-content: center; */
+    gap: 3%;
+   
+    width: 89%;
+    height: 25%;
+    
+}
+
+.RTL_line{
+    height:100%;
+    width:1px;
+    background-color: #9d9d9d;
+}
+
+.RTL_cake_img_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.RTL_justme{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #CAA974;
+    width:35%;
+    height:20px;
+    color: #ffffFF;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    border-radius:24px;
+    margin-bottom:-5%;
+    
+    z-index:2;
+
+}
+
+.RTL_alert_text{
+    text-align: center;
+    font-size: clamp(18px, 0.5vw, 19px) ;
+    font-weight: 700;
+    margin-top:-2%;
+}
+
+.RTL_alert_text strong{
+    font-size: clamp(14px, 0.5vw, 14.5px) ;
+    font-weight: 400;
+    color: #9d9d9d;
+}
+
+
+.Warehousing_text_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width:100%;
+    font-size: clamp(11px, 1vw, 15px) ;
+    line-height:230%;
+    font-weight: 600;
+   
+    background-color: #EEEEEE;
+    border-radius :15px;
+    
+    
+
+}
+
+
+
+.Warehousing_text_box strong{
+    color: #0053FF;
+    font-size: clamp(11px, 1vw, 13px) ;
+    font-weight: 600;
+}
+
+.RTL_Arrow {
+    position: absolute;
+    top:100%;
+    width:20vw;
+    
+}
+
+
+.RTL_Arrow.A {
+    left:50%;
+}
+
+.RTL_Arrow.B {
+    right:50%;
 }
