@@ -1165,7 +1165,7 @@ position: relative;
 #designSystem{
     position: relative;
     width:100%;
-    height:400vh;
+    height:200vw;
     padding: 5vw;
     background-color: #ffffFF;
    
@@ -1637,7 +1637,7 @@ position: relative;
 
 .AppVentoGrid.A{
     position: relative;
-    height: 742px;
+    height: 40vw;
     padding:6vh;
 }
 
@@ -2821,8 +2821,9 @@ align-items: center;
    
     border-radius: 30px;
     border: #000000 solid 2px;
-    width:80%;
-    height:95%;
+    width:70%;
+  
+    aspect-ratio:1147/776;
     overflow: hidden;
  }
 
@@ -2838,7 +2839,8 @@ align-items: center;
  }
 
  .Look_system_leftbox img{
-    height:110%;
+    height:110%; 
+   
  }
 
 
@@ -2847,6 +2849,7 @@ align-items: center;
  .Look_system_rightbox img{
 
     height:98%;
+     z-index:2;
  }
 
  .Look_disc_text_box{
@@ -2869,8 +2872,10 @@ align-items: center;
 
  .right_arrow{
     position: absolute;
-    right:82%;
+    right:73%;
     bottom:20%;
+    width:100%;
+    aspect-ratio:677/133;
  }
 
  /* 마지막 목업 이미지 */
