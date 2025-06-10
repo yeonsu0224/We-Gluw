@@ -2910,11 +2910,13 @@ align-items: center;
 
  #footer{
     display: flex;
+    justify-content: end;
     flex-direction: column;
     gap: 2vh;
     height:500px;
     width:100%;
     padding: 5vw;
+    padding-bottom:2vw;
  }
 
  .footer_line {
