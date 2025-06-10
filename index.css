@@ -1030,7 +1030,7 @@ a {
 #designSystem {
     position: relative;
     width: 100%;
-    height: 200vw;
+    height: auto;
     padding: 5vw;
     background-color: #ffffFF;
 }
@@ -1066,7 +1066,7 @@ a {
 .designSystem_wrap {
     position: relative;
     width: 100%;
-    height: 2235px;
+    height: auto;
 }
 
 .designSystem_svg {
@@ -1092,13 +1092,13 @@ a {
 .designSystem_grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 0.7fr 1fr 0.5fr 0.5fr 1fr 1.3fr;
+    grid-template-rows: 0.7fr 1fr 0.5fr 0.5fr 1fr 2fr;
     position: relative;
     width: 100%;
     height: auto;
     list-style: none;
     gap: 1%;
-    aspect-ratio: 1721 / 1980;
+    aspect-ratio: 1721 / 2200;
     z-index: 2;
 }
 
@@ -1330,6 +1330,8 @@ a {
     grid-row: 5 / span 2;
     background-color: #0053FF;
     overflow: visible;
+    margin-top:10vw;
+    
 }
 
 .Logo p {
@@ -1354,8 +1356,6 @@ a {
     position: relative;
     width: 100%;
     height: 120vh;
-    padding: 5vw;
-    padding-top: 15vw;
     background-color: #ffffff;
 }
 
