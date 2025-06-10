@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 비디오를 재생할 스크롤 Y 위치 (픽셀 단위)를 정의합니다.
     // 이 값은 비디오 요소가 페이지의 어느 정도 높이에 있는지에 따라 조절해야 합니다.
-    const playScrollPosition = 2000; // 예를 들어, 스크롤이 1000px 내려왔을 때 재생
+    const playScrollPosition = 1800; // 예를 들어, 스크롤이 1000px 내려왔을 때 재생
 
     // 비디오를 일시 정지할 스크롤 Y 위치를 정의합니다.
     // playScrollPosition보다 커야 합니다.
-    const pauseScrollPosition = 3000; // 예를 들어, 스크롤이 2000px를 넘어갔을 때 일시 정지
+    const pauseScrollPosition = 2000; // 예를 들어, 스크롤이 2000px를 넘어갔을 때 일시 정지
 
     let videoPlayed = false; // 비디오가 한 번 재생되었는지 추적하는 플래그
 
