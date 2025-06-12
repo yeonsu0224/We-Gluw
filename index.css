@@ -92,7 +92,7 @@ a {
 
 .description {
     position: relative;
-    top: 100px;
+    
     left: 5%;
     font-size: clamp(18px, 1.1vw, 24px);
     font-weight: 500;
@@ -637,85 +637,104 @@ a {
 }
 
 #Co-living {
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: flex-start;
     position: relative;
+    gap:1%;
     width: 100%;
     height: 300vh;
     min-height: 1000px;
-    padding: 100px;
+    padding:5vw;
     /* overflow-x: hidden; */
 }
 
-.coliving_board {
-    display: flex;
-    align-items: center;
-    position: relative;
-    top: 193px;
-    width: 100%;
-    height: 95vh;
-    background-color: #ffffff;
-    border-radius: 30px;
-    z-index: 10;
-    cursor: pointer;
-    pointer-events: auto;
-}
 
-.cl_title {
-    position: absolute;
-    width: 100%;
-    font-size: clamp(170px, 50vw, 200px);
-    font-weight: 400;
-    letter-spacing: -2px;
 
-    text-align: center;
-    z-index: 1;
-    transition: all 1s ease-in-out;
-    pointer-events: none;
-}
 
-.coliving_board.on .cl_title {
-    font-size: clamp(150px, 4vw, 160px);
-    font-weight: 300;
-    margin-top: -60vh;
-    transition: all 1s ease-in-out;
-}
 
 .messenger_box {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
+    
     width: 283px;
     height: 83px;
     border: 2px solid #000000;
+    background-color: #ffffFF;
     font-size: 24px;
     font-weight: 400;
-    opacity:0;
-    z-index: 1;
+    opacity:1;
+    z-index: 3;
 }
 
+.messenger_box::after {
+    content: "";
+    position: absolute;
+    top: -55px;
+    right: 44%;
+    width: 32px;
+    height: 32px;
+    background-color: #ffffff;
+    border: #000000 2px solid;
+    border-radius: 10px;
+    
+}
+
+.checkmark_svg{
+    position: absolute;
+    top:-130%;
+    left:35%;
+    width: 100px;
+      height: 100px;
+      z-index:5;
+}
+
+.user_box_cover:hover .checkmark{
+    animation: draw 6s ease-out forwards;
+}
+
+.user_box_cover.on .checkmark{
+    stroke-dashoffset: 0;
+}
+
+.checkmark {
+      fill: none;
+      stroke: black;
+      stroke-width: 10;
+      stroke-linecap: square;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
 .messenger_box.A {
-    top: calc(50% - 220px);
-    left: max(calc(50% - 760px), 50px);
-    background-color: #FF7B00;
-    color: #ffffFF;
+ 
+    /* background-color: #FF7B00; */
+    color: #000000;
+    border-radius:  30px 30px 30px 0;
+    transition: all 1s ease-in-out;
+}
+
+.messenger_box.B {
+
+    /* background-color: #FFCE33; */
+    color: #000000;
     border-radius: 30px 30px 0 30px;
     transition: all 1s ease-in-out;
+    pointer-events: none;
 }
 
-.coliving_board.on .messenger_box.A {
-    top: calc(50% - 130px);
-    opacity:1;
-    transition: all 1s ease-in-out;
 
-}
 
-.coliving_board.on .messenger_box.B {
-    top: calc(50% - 130px);
-    opacity:1;
-    transition: all 1s ease-in-out;
-}
-
-.messenger_box.A::after {
+/* .messenger_box.A::after {
     content: "";
     position: absolute;
     top: -20px;
@@ -726,27 +745,19 @@ a {
     border: #000000 2px solid;
     border-radius: 10px;
     transform: rotate(10deg);
-}
+} */
 
-.messenger_box.A svg {
+/* .messenger_box.A svg {
     position: absolute;
     top: -40px;
     right: -10px;
     z-index: 1;
     pointer-events: none;
-}
+} */
 
-.messenger_box.B {
-    top: calc(50% + 140px);
-    right: max(calc(50% - 760px), 50px);
-    background-color: #FFCE33;
-    color: #000000;
-    border-radius: 30px 30px 30px 0;
-    transition: all 1s ease-in-out;
-    pointer-events: none;
-}
 
-.messenger_box.B::after {
+
+/* .messenger_box.B::after {
     content: "";
     position: absolute;
     top: -20px;
@@ -758,75 +769,105 @@ a {
     border-radius: 10px;
     transform: rotate(10deg);
     pointer-events: none;
-}
-
+} */
+/* 
 .messenger_box.B svg {
     position: absolute;
-    top: -60px;
     right: 0;
     z-index: 1;
     pointer-events: none;
-}
+} */
 
-.CL_svg_wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    width: 67vw;
-    max-width: 1600px;
-    aspect-ratio: 1373 / 551;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
 
-.coliving_board.on .CL_svg_wrap {
-    opacity: 0;
-    transition: all 1s ease-in-out;
-}
 
-.CL_svg_wrap svg {
-    width: 100%;
-    height: 100%;
-    margin-left: -3vw;
-}
 
 .user_container {
     display: flex;
     justify-content: center;
-    width: 90%;
-    max-width: 1400px;
-    margin: auto;
-    margin-top: 37vh;
-    gap: 30px;
+    
+    width: 100%;
+    gap: 1.5%;
+    margin-top:10vh;
+}
+
+.user_box_cover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    cursor: pointer;
+    z-index:5;
+    
+}
+
+.user_box_cover.on{
+    animation: cover_off forwards 0.5s 0.1s;
+}
+
+
+@keyframes cover_off {
+    to{opacity:0; transform: scale(120%);}
+}
+
+.user_box_cover_BG{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color:rgba(56, 56,56, 0.4); /* 검은색(hsl 기준)에 50% 투명도 */
+    backdrop-filter: blur(10px);
+    transition: all 1s ease-in;
+
+    
+
 }
 
 .user_box {
     position: relative;
-    width: 694px;
-    height: 455px;
-    padding: 48px 67px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    aspect-ratio:844/570 ;
+
     background-color: #F7F7F7;
-    border-radius: 40px;
+    border-radius: 30px;
     z-index: 0;
-    opacity: 0;
+    opacity: 1;
+    padding-bottom:5%;
     transition: all 1s ease-in-out;
+    overflow: hidden;
 }
 
-.coliving_board.on .user_box {
-    opacity: 1;
-    transition: all 1s ease-in-out;
+
+.user_box_inner.A{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    width:80%;
+    height:80%;
 }
 
-.user_box.after {
-    opacity: 1;
+
+.user_box_inner.B{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    width:65%;
+    height:80%;
 }
+
+
 
 .user_box p {
     position: absolute;
-    bottom: 48px;
+    bottom: 13%;
     left: 0;
     width: 100%;
     font-size: 22px;
@@ -834,59 +875,85 @@ a {
 }
 
 .user_list {
+    /* position: absolute;
+    bottom:30%;
+    left:17.5%; */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    position: relative;
-    width: 52%;
-    height: 80%;
+    width: 40%;
+    aspect-ratio: 1/1;
     list-style: none;
-    margin-top: 10%;
+    gap:11%;
+    margin-right:8%;
 }
 
 .user_list li {
-    width: 30px;
-    height: 30px;
+    width: 100%;
+    aspect-ratio: 1/1;
     background-color: #EAEAEA;
     border-radius: 100%;
 }
 
-.user_list li:nth-child(n+15):nth-child(-n+30) {
+.user_list li:nth-child(n+1):nth-child(-n+4){
+    opacity: 0;
+}
+
+.user_list li:nth-child(n+7):nth-child(-n+8){
+    opacity: 0;
+}
+
+
+.user_list li:nth-child(n+21):nth-child(-n+36) {
     background-color: #FF7B00;
 }
 
 .user_svg {
-    position: absolute;
-    bottom: 126px;
-    right: 67px;
+    /* position: absolute;
+    bottom:29%;
+    right:15% ; */
     z-index: 2;
+    width:32%;
+    margin-bottom:-1%;
+    
+ 
+    
+}
+
+.lock_svg{
+    position: absolute;
+    right:0.1%;
+    bottom:3%;
 }
 
 .user_half_list {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: end;
     position: relative;
-    top: 10%;
+    gap:1%;
     width: 100%;
-    height: 70%;
+
     list-style: none;
 }
 
 .user_half_list li {
+    
+    width: 1vw;
     min-width: 20px;
-    max-width: 35px;
-    width: 1.6vw;
-    height: 100%;
+    max-width: 30px;
+    aspect-ratio:1/13;
+   
     background-color: #FFCE33;
     border-radius: 5px;
 }
 
 .user_half_list li:nth-child(n+9):nth-child(-n+14) {
-    min-height: 173px;
-    max-height: 230px;
+    
     height: 80%;
     background-color: #EAEAEA;
+    max-height:230px;
+    
 }
 
 

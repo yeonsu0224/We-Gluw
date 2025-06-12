@@ -1,133 +1,630 @@
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'SUIT';
+    src: url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Heavy.woff2') format('woff2');
+    font-weight: 900;
+}
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+@font-face {
+    font-family: 'Pretendard Variable';
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: url('/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+}
+
+
 * {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-
+    font-synthesis: none;
+    font-family: 'Pretendard', sans-serif;
 }
 
-#Panel {
+input{
+    z-index:30;
+}
+
+#panel {
     position: relative;
-    left:50%;
-    top:500px;
-    background-color: gainsboro;
-    width: 270px;
-    height: 480px;
-    scale:200%;
+    border: 2px black solid;
+    width:30%;
+    aspect-ratio:9/16;
+    /* background-image: url("Img/panel/panel_1.png");
+    background-position: center;
+    background-size: cover; */
 }
 
-/* ------------------------------------------------------- */
-
-
-
-#Nev {
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 10%;
-    background-color: beige;
-    padding: 10px;
-    z-index:3;
-
-}
-
-#Nav_menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    list-style: none;
-    align-items: center;
-
-}
-
-.menu {
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-color: black;
-
-}
-
-.menu.active {
-    background-color: blue;
-
-}
-
-/* ------------------------------------------------------- */
-.page_1, .page_2, .page_3, .page_4, .page_5 {
+.panel_img{
     position: absolute;
     width:100%;
     height:100%;
-    padding-bottom:10%;
-    cursor: pointer;
-}
-
-.page_1{
-    background-color: aqua;
-    display:none;
-}
-
-.page_2{
-    background-color: red;
+    opacity:0;
     display: none;
+    transition: all 0.5s ease-in;
 }
 
-.page_3{
-    background-color: rgb(0, 255, 166);
-    display: none;
-}
+.panel_img img{
+    top:0;
+     position: absolute;
+    width:100%;
+    height:100%;
 
-
-.page_4{
-    background-color: rgb(0, 8, 255);
-    display: none;
-}
-
-.page_5{
-    background-color: rgb(255, 0, 140);
-    display: none;
+    transition: all 0.5s ease-in;
 }
 
 
-.modal {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.modal.active {
+.panel_img.on{
+    
+    opacity:1;
     display: block;
 }
 
-
-.alert {
+.panel_Introduction_button{
     position: absolute;
-    left: calc(50% - 90px);
-    top: calc(50% - 190px);
-    width: 180px;
-    height: 260px;
-    background-color: aliceblue;
-    border-radius: 10px;
-    z-index: 3;
+    
+    width:100%;
+    height:100%;
+    border: 2px solid black;
+    z-index: 2;
+    /* mix-blend-mode:lighten; */
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in ;
+    cursor: pointer;
 }
 
-.alert-title {
+.panel_Introduction_button:hover{
+    opacity: 1;
+    transition: opacity 0.5s ease-in ;
+    border: 1px solid #0053FF;
+}
 
+.panel_Introduction_button.A{
+    top:33.6%;
+    left:28%;
+    
+    height:10%;
+    width:auto;
+    aspect-ratio: 5/5;
+    border-radius: 100%;
+
+}
+
+
+.keypad-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width:100%;
+    height:40%;
+
+    padding: 20px;
+    border-radius: 15px;
+   
+}
+
+.keypad-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    grid-gap: 7%; /* 버튼 간 간격 */
+    justify-content: center;
+    align-items: center;
+    width:62%;
+}
+
+.keypad-button {
     width: 100%;
-    height: auto;
-    padding: 5%;
-    text-align: center;
+    aspect-ratio: 1/1;
+    background-color: #555; /* 버튼 배경색 */
+    opacity:80%;
+    border-radius: 50%; /* 원형 버튼 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+
+.keypad-button:hover {
+    background-color: #666; /* 호버 시 배경색 */
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.keypad-button .number {
+    font-weight: 400;
+    font-size: 2.5em; /* 숫자 크기 */
+    line-height: 1; /* 줄 높이 조정 */
+}
+
+.keypad-button .letters {
+    font-weight: 400;
+    font-size: 0.7em; /* 문자 크기 */
+    margin-top: 2px; /* 숫자와 문자 사이 간격 */
+    letter-spacing: 0.05em; /* 문자 간격 */
+}
+
+/* 0번 버튼은 가운데 정렬을 위해 특별히 처리 */
+.keypad-grid .zero {
+    grid-column: 2 / span 1; /* 0번 버튼을 2번째 열에 위치시키고 1칸 차지 */
+    justify-self: center; /* 그리드 셀 안에서 가운데 정렬 */
+}
+
+
+#password{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap:8%;
+    width:100%;
+    height:100%;
+    padding-bottom:15%;
+}
+
+.keypad-container{
+    z-index:3;
+}
+
+.password_length{
+    list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap:5%;
+  z-index:3;
+  width:45%;
+}
+
+.password_circle{
+    width:15px;
+    height:15px;
+    border-radius: 100%;
+    border: solid white 2px;
+    transition: all 0.2s ease-in-out;
+    
+}
+
+.password_circle.clicked{
+    background-color: #ffffff;
+   
+}
+
+
+#SelectPicture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap:3%;
+    width:100%;
+    height:100%;
+    position: relative;
+
+}
+
+.cake_photo_Select{
+    position: absolute;
+    z-index:3;
+    width:63%;
+    aspect-ratio: 674.28/669.83;
+    background-image: url("Img/panel/cake_photo.png");
+    background-position: center;
+    background-size: cover;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.cake_photo_Select:hover{
+    
+    box-shadow: 0px 0px 40px 1px #ffffff;
+}
+
+.cake_photo_Select::after{
+    content: "";
+    position: absolute;
+    right:-5.5%;
+    top:-5.5%;
+    width:11.5%;
+    aspect-ratio:5/5;
+    background-color: #C5C5C5;
+    border: 1px #ffffff solid;
+    border-radius: 100%;
+    z-index:4;
+}
+
+.cake_photo_Select.Checked{
+    box-shadow: 0px 0px 40px 1px #ffffff;
+}
+
+.cake_photo_Select.Checked::before{
+   content: "";
+    position: absolute;
+    right:-5.5%;
+    top:-5.5%;
+    width:11.5%;
+    aspect-ratio:5/5;
+    background-image: url("Img/panel/Check.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px #ffffff solid;
+    border-radius: 100%;
+    z-index:5;
+    opacity:1;
+}
+
+
+.button-container {
+    position: absolute;
+    bottom:10.5%;
+    z-index:5;
+    display: flex; 
+    justify-content: center;
+    gap: 20px; /* 버튼 사이의 간격 */
+    padding: 4.5%;
+    width:100%;
+    height:13%;
+}
+
+.action-button {
+    padding: 15px 40px; /* 상하 15px, 좌우 40px 패딩 */
+    border: none;
+    border-radius: 5px; /* 모서리 둥글게 */
+    font-size: clamp(12px, 1.3vw, 18px);
+    font-weight: 400;
+    width:100%;
+    height:100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 호버 효과를 위한 전환 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+   
+}
+
+.close-button {
+    background-color: #e0e0e0; /* 닫기 버튼 배경색 (밝은 회색) */
+    color: #333; /* 닫기 버튼 폰트 색상 */
 }
 
 
 
-.m_bg {
-    position: absolute;
+.select-button {
+    background-color: #0053FF; /* 선택 버튼 배경색 (파란색) */
+    color: white; /* 선택 버튼 폰트 색상 */
+}
+
+.select-button:hover {
+    background-color: #276efc; /* 호버 시 약간 더 어둡게 */
+    
+}
+
+
+/* 음식 정보 등록 */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    padding-top:7.1%;
+     /* UI 박스의 최대 너비 제한 */
+    /* 배경 블러 효과를 위한 배경 이미지 (이미지에 보이는 냉장고 배경) */
+    background: url('') no-repeat center center / cover; /* 실제 배경 이미지 경로로 변경 */
+
+    /* UI 박스와 동일한 모서리 둥글게 */
+  
+}
+
+.ui-box {
+    background-color: #D7D7D7; /*  박스 배경색 (약간 투명도를 주어 뒤 배경이 비치도록) */
+    border-radius: 10px; /* 박스 모서리 둥글게 */
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 이 그림자는 main-container로 이동 */
+    padding: 5%;
+    /* width: 100%; */
+    height:45% ;
+   
+
+    aspect-ratio: 836.29/820;
+    max-height: 450px;
+    box-sizing: border-box;
+    position: relative;
+    border: none; /* 이미지에는 명확한 테두리가 없으므로 제거 */
+    overflow: hidden; /* 내부 요소가 박스 밖으로 나가지 않도록 */
+}
+
+
+
+/* Section Top (Image & Input) */
+.section-top {
+    height:40%;
+    display: flex;
+    align-items: flex-end; /* 이미지와 입력 필드 상단 정렬 */
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.image-placeholder {
+    position: relative;
+    flex-shrink: 0; /* 이미지 크기 고정 */
+    width: 40%; /* 이미지 너비 이미지에 가깝게 조절 */
+    aspect-ratio: 5/5;
+    border-radius: 10px; /* 이미지 모서리 둥글게 */
+    overflow: hidden;
+    background-color: #eee; /* 이미지 없을 때 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* 그림자 강화 */
+}
+
+.image-placeholder img {
     width: 100%;
     height: 100%;
-    background-color: black;
-    opacity: 50%;
+    object-fit: cover; /* 이미지가 박스에 꽉 차도록 */
+}
+
+.input-group.search-input {
+    flex-grow: 1; /* 남은 공간을 차지 */
+    width:10%;
+    display: flex;
+    align-items: center;
+    border: none; /* 이미지에는 별도 테두리가 보이지 않음 */
+    border-bottom: 1px solid #ccc; /* 하단 줄만 */
+    padding: 8px 0; /* 좌우 패딩 제거, 상하만 */
+    background-color: transparent; /* 배경 투명 */
+    box-shadow: none; /* 그림자 제거 */
+}
+
+.input-group.search-input input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 0.9em; /* 폰트 크기 약간 키움 */
+    padding: 0; /* 기본 input 패딩 제거 */
+    background: transparent;
+    color: #0053FF;
+    font-size:30px;
+    font-weight: 600;
+    /* placeholder 색상 조정 */
+    &::placeholder {
+        color: #999;
+        font-weight: 300;
+        font-size:14px;
+    }
+}
+
+.icon-button {
+    position: absolute;
+    right:5%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px; /* 좌우 패딩 조절 */
+    font-size: 1.5em; /* 아이콘 크기 약간 키움 */
+    color: #a0a0a0; /* 아이콘 색상 이미지에 가깝게 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+
+.icon-button.voice-icon{
+transform: scale(90%);
+ right:10%;
+}
+
+
+.clear-icon::before { content: '✕'; font-weight: bold; color: #0053FF; } /* X 아이콘 */
+
+
+/* Common Row Styles */
+.section-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1em; /* 폰트 크기 조정 */
+    color: #333;
+    padding-bottom: 10px; /* 각 섹션 하단에 약간의 여백 */
+    border-bottom: 1px solid #eee; /* 구분선 추가 */
+}
+
+.section-row:last-child { /* 마지막 섹션은 구분선 제거 */
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+.section-row .label {
+    flex-shrink: 0;
+    width: 100px; /* 라벨 너비 고정 */
+    font-weight: 500; /* 폰트 두께 조정 */
+    color: #333;
+}
+
+/* Storage Location Section */
+.storage-location {
+    position: relative; /* 슬라이더 점선 기준 */
+    justify-content: space-between; /* 양 끝 정렬 */
+}
+
+.storage-location .slider-placeholder {
+    flex-grow: 1;
+    height: 1px; /* 점선 두께 */
+    background-color: transparent; /* 배경 투명 */
+    position: relative;
+    margin: 0 15px; /* 라벨과 텍스트 사이 간격 늘림 */
+}
+
+.storage-location .slider-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px; /* 점선 두께 */
+    background-image: linear-gradient(to right, #ccc 50%, transparent 50%); /* 점선 효과 */
+    background-size: 6px 1px; /* 점선의 밀도와 두께 조절 (이미지에 맞춤) */
+    background-repeat: repeat-x;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+.storage-location .location-text {
+    position: absolute;
+    flex-shrink: 0;
+    font-weight: 600; /* 폰트 두께 이미지에 가깝게 */
+    margin-right: 5px; /* 드롭다운 아이콘과의 간격 조절 */
+    color: #555; /* 색상 이미지에 가깝게 */
+    right:15px;
+}
+
+.storage-location .dropdown-arrow {
+    
+    position: absolute;
+    right:-2%;
+}
+
+.dropdown-arrow-svg{
+    transform: scale(80%);
+}
+
+
+
+
+/* Date Input Sections */
+.date-input {
+    color: #555; /* 날짜 섹션 텍스트 색상 */
+}
+
+.date-input input[type="text"] {
+    position: absolute;
+    flex-grow: 1;
+    width:25%;
+    height:8%;
+    right:5%;
+    text-align: right; /* 날짜 우측 정렬 */
+    padding: 8px 12px; /* 패딩 조절 */
+    border-radius: 5px;
+    background-color: #BABABA; /* 배경색 약간 어둡게 */
+    font-size: 1em;
+    text-align: center;
+   
+    border: none;
+    margin-bottom:2%;
+
+    outline: none;
+    z-index:30;
+}
+
+/* Expiration Alert Toggle */
+.alert-toggle {
+    justify-content: space-between; /* 라벨과 토글 스위치 양 끝 정렬 */
+    margin-top: 10px; /* 위쪽 여백 추가 */
+    border-bottom: none; /* 마지막 요소이므로 구분선 제거 */
+    padding-bottom: 0;
+}
+
+/* Toggle Switch Styles (CSS Tricks 참고) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #a0a0a0; /* 꺼졌을 때 색상 이미지에 가깝게 변경 */
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #0053FF; /* 켜졌을 때 파란색 */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 28px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* 음식 이름 설정 완료 */
+
+.cake_Name{
+    position: absolute;
+    bottom:37.5%;
+    color: #ffffff;
+    z-index:10;
+   font-size: 1.7em;
+   font-weight:500;
+   text-align: center;
+   width:100%;
 }

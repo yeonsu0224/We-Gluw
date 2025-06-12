@@ -5,7 +5,7 @@ const videoPlayback = 1000;
 const videoEnding = 300;
 
 // 호버 혹은 클릭 인터랙션을 위한 요소 불러오기
-let coliving_board = document.querySelector(".coliving_board");
+let user_box_cover = document.querySelectorAll(".user_box_cover");
 let designSystem_Symbol_box = document.querySelector(".Symbol");
 let symbol_svg = document.querySelector(".symbol_svg");
 let symbol_grid = document.querySelector(".symbol_grid");
@@ -60,10 +60,13 @@ observer.observe(videoSection); // 또는 observer.observe(video);
 
 
 // 호버 혹은 클릭 인터랙션을 위한 기능 구현
-coliving_board.addEventListener("click", () => {
-  coliving_board.classList.add("on");
-  console.log("보드 클릭됨");
+user_box_cover.forEach(box_cover=> {
+  box_cover.addEventListener("click", () => {
+  box_cover.classList.add("on");
+  console.log("유저박스 클릭됨");
 });
+})
+
 
 // symbol_svg와 symbol_grid 애니메이션 (기존 코드 유지)
 setInterval(() => {
