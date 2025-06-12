@@ -1335,6 +1335,7 @@ a {
 }
 
 .Logo p {
+    color: #ffffff;
     position: absolute;
     top: 3vw;
     left: 3vw;
@@ -1447,8 +1448,8 @@ a {
     align-items: center;
     position: relative;
     width: 100%;
-    height: 220vh;
-    min-height: 1500px;
+    height: 130vh;
+    min-height: 1200px;
     padding: 5vw;
     background-color: #ffffFF;
 }
@@ -1535,23 +1536,23 @@ a {
 }
 
 .App_disc_box.A {
-    top: 14vh;
+    top: 9vh;
     left: 18vw;
 }
 
 .App_disc_box.B {
-    top: 31.8vh;
+    top: 26.8vh;
     right: 3vw;
 }
 
 .App_disc_box.C {
-    top: 58vh;
+    top: 53vh;
     left: 5vw;
 }
 
 .App_disc_box.D {
-    top: 80vh;
-    right: 5vw;
+    top: 65vh;
+    right: 3vw;
 }
 
 .App_disc_box p {
@@ -1629,7 +1630,7 @@ a {
 /* ======================================== */
 #Real_time_Logging {
     width: 100%;
-    height: 165vh;
+    height: 135vh;
     padding-top: 10%;
     background-color: #ffffFF;
 }
@@ -1639,7 +1640,7 @@ a {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    gap: 7vh;
+    gap: 3vh;
 }
 
 .subheading.RTL {
@@ -1662,7 +1663,7 @@ a {
     bottom: -10px;
     width: 100%;
     height: 700px;
-    margin-top: 8%;
+    margin-top: 3%;
     gap: 5vw;
 }
 
@@ -1701,13 +1702,15 @@ a {
     padding-bottom: 1.5vw;
     border: #4D4D4D solid 2px;
     border-radius: 30px;
+    background-color: #ffffff;
+    z-index:2;
 }
 
 .RTL_disc_box.A {
     justify-content: space-between;
     width: 23vw;
     height: auto;
-    bottom: 8.7vw;
+    bottom: 3vw;
     aspect-ratio: 3 / 3.1;
 }
 
@@ -1715,7 +1718,7 @@ a {
     justify-content: center;
     width: 23vw;
     height: auto;
-    bottom: -5.8vw;
+    bottom: -12vw;
     padding: 1vw;
     padding-top: 0.8vh;
     padding-bottom: 0.8vh;
@@ -1821,16 +1824,20 @@ a {
 
 .RTL_Arrow {
     position: absolute;
-    top: 100%;
+    
     width: 20vw;
+    z-index: 1;
 }
 
 .RTL_Arrow.A {
-    left: 50%;
+    top: 43%;
+    
+    right: 57%;
 }
 
 .RTL_Arrow.B {
-    right: 50%;
+    top: 78%;
+    left: 57%;
 }
 
 
@@ -1840,16 +1847,17 @@ a {
 #Food_management {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     position: relative;
     width: 100%;
-    height: 170vh;
+    height: 145vh;
+    min-height:1300px;
     padding-top: 10%;
     background-color: #ffffff;
 }
 
 .RTL_disc_text_box.Fm {
-    bottom: calc(100% + 15vh);
+    bottom: calc(100% + 30px);
 }
 
 .subheading.FM {
@@ -1871,65 +1879,78 @@ a {
 }
 
 .Food_management_inner_wrap {
+    display: flex;
+   
+    align-items: center;
+    justify-content: space-around;
     position: relative;
     bottom: 15%;
     width: 80vw;
-    height: auto;
+    height: 70%;
+    gap:10vw;
+    padding-left:8vw;
 }
 
 .Food_Img_box {
     display: flex;
     justify-content: center;
-    position: absolute;
-    left: calc(50% - 37vw);
-    width: 35vw;
+    align-items: center;
+    position: relative;
+    right: calc(50% - 37vw);
+    width: 30vw;
     min-width: 500px;
     border: #000000 solid 2px;
-    border-radius: 30px;
-    aspect-ratio: 1 / 0.95;
+    background-color: #ffffff;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1.16;
+    padding:1%;
+    margin-bottom:10vh;
 }
 
 .Food_Img_box_flex {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 5%;
-    width: auto;
-    height: 110%;
-    gap: 3%;
-}
-
-.Fm_img_box {
-    display: flex;
-    flex-direction: column;
-    width: 130%;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    width: 100%;
     height: 100%;
     gap: 1%;
+    row-gap:0.5%;
 }
 
-.Fm_img_box img {
-    width: 14vw;
+.Img_box_inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top:3px;
 }
 
-.Fm_img_box.A {
-    justify-content: end;
+.Food_Img_box_flex img {
+    width: 100%;
 }
+
+
 
 .FM_arrow {
     position: absolute;
-    top: 43%;
-    left: 100%;
+    top: 38%;
+    left: 86%;
+    width:20vw;
     z-index: 1;
 }
 
 .Mockup_FM {
-    position: absolute;
-    top: calc(50% - 700px);
-    right: 4vw;
-    left: calc(50% + 250px);
+    display: flex;
+    justify-content: center;
+    position: relative;
+   
     z-index: 0;
+    width:20vw;
 }
 
+.Mockup_FM img{
+    width:100%;
+}
 
 /* ======================================== */
 /* ID 사용자 식별 잠금장치 섹션 (ID User Identification Lock Section) */
@@ -2124,7 +2145,7 @@ a {
 .moderation_Mockups {
     position: absolute;
     top: 5vh;
-    left: calc(50% - 1000px);
+    left:calc(50% + 225px);
     width: 110%;
     z-index: 0;
 }
@@ -2138,6 +2159,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:10vh;
     position: relative;
     width: 100%;
     height: 150vh;
@@ -2602,7 +2624,7 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 150vh;
+    height: 120vh;
 }
 
 .last_wegluePhoto {
@@ -2614,7 +2636,7 @@ a {
     object-position: center;
     border: #000000 solid 2px;
     border-radius: 30px;
-    margin-bottom: 30vh;
+  
 }
 
 
