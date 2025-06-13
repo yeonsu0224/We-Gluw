@@ -703,12 +703,14 @@ a {
 
 .checkmark_svg{
     position: absolute;
-    top:-130%;
-    left:35%;
-    width: 100px;
+    top:-127%;
+    left:39%;
+    width: 70px;
       height: 100px;
-      z-index:5;
+      z-index:10;
 }
+
+
 
 .user_box_cover:hover .checkmark{
     animation: draw 6s ease-out forwards;
@@ -720,13 +722,24 @@ a {
 
 .checkmark {
       fill: none;
-      stroke: black;
+    
+      stroke-linecap:round;
+       stroke-linejoin:round; 
+       
       stroke-width: 10;
-      stroke-linecap: square;
+
       stroke-dasharray: 1000;
       stroke-dashoffset: 1000;
       
     }
+.checkmark.A{
+    stroke:#FF7B00;
+}
+
+.checkmark.B{
+    stroke:#FFCE33;
+}
+
 
     @keyframes draw {
       to {
@@ -802,10 +815,19 @@ a {
 .user_container {
     display: flex;
     justify-content: center;
+    background-color: #0053FF;
     
     width: 100%;
     gap: 1.5%;
     margin-top:10vh;
+}
+
+.blue_cover_bottom{
+    position: absolute;
+    background-color: #0053FF;
+    width: 100%;
+    height:35%;
+    filter: blur(100px);
 }
 
 .user_box_cover{
