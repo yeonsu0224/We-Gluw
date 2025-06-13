@@ -14,6 +14,23 @@ let symbol_grid = document.querySelector(".symbol_grid");
 const functionTextBoxs = document.querySelectorAll(".functionTextBox");
 const functionCards = document.querySelectorAll(".function_list");
 
+// Lenis 인스턴스 생성
+const lenis = new window.Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+});
+
+// 부드러운 스크롤 실행
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
+
 // keyfunction 카드 스크롤 애니메이션
 const observerOptions = {
   root: null, // 뷰포트 기준
@@ -81,17 +98,3 @@ setInterval(() => {
 
 console.log(coliving_board);
 
-// Lenis 인스턴스 생성
-const lenis = new window.Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smooth: true,
-});
-
-// 부드러운 스크롤 실행
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);

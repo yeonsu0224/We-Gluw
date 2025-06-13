@@ -368,6 +368,7 @@ a {
     flex-direction: column;
     justify-content: end;
     position: relative;
+    gap:10%;
     width: 100%;
     height: 160vh;
     
@@ -376,15 +377,15 @@ a {
 }
 
 #interaction .subheading {
-    position: absolute;
+
     width: 100%;
     text-align: center;
-    top: 5vh;
+
     left: 0;
 }
 
 #interaction .description {
-    position: absolute;
+  
     width: 100%;
     text-align: center;
     left: 0;
