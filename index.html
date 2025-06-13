@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>We:Glue!</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
@@ -67,10 +67,10 @@
                     </div>
 
                     <div class="Nav_ber_back">
-                        <div class="nav_button">INTRO</div>
-                        <div class="nav_button">VISION</div>
-                        <div class="nav_button">DESIGN</div>
-                        <div class="nav_button">SERVICE</div>
+                        <div class="nav_button" data-section="#introVideo_wrap">INTRO</div>
+                        <div class="nav_button" data-section="#Overview">VISION</div>
+                        <div class="nav_button" data-section="#designSystem_navpoint">DESIGN</div>
+                        <div class="nav_button" data-section="#AppIntroduction">SERVICE</div>
                     </div>
 
 
@@ -795,7 +795,7 @@
                     <img class="wegluePhoto" src="Img/Mockup_exam_2.png" alt="App Mockup img">
                 </div>
 
-                <p class="designSystem_subheading">Design System</p>
+                <p class="designSystem_subheading" id="designSystem_navpoint">Design System</p>
                 <p class="designSystem_description">추운 환경에서도 내부는 따뜻한 이글루에서 고안하여,<br>
                     함께 사는 공간이 차갑고 삭막할 수 있지만, 위글루를 통해<br>
                     서로 부딪히는 일 없이 따뜻하고 끈끈하게 이어지는 관계를 목표로 합니다.
@@ -858,7 +858,7 @@
 
 
                 </div>
-                <ul class="designSystem_grid">
+                <ul class="designSystem_grid" >
                     <li class="Symbol">
                         <p>Symbol</p>
 
@@ -1954,9 +1954,8 @@
 
         <section id="last_blue_Logo">
             <div class="last_blue_Logo_textbox">
-            <p class="capy_line last_blue_Logo">차가운 공간 속 따듯한 마음을 담다, <strong>위글루!</strong></p>
-            <p class="description last_blue_Logo">함께 사는 집에 가장 차가운 공간, 차가운 눈빛만이 오가나요?<br>
-                                        위글루가 편안하고 안심할 수 있는 공간으로 바꿔드릴게요.</p>
+            <p class="capy_line last_blue_Logo">차가운 공간 속 따뜻한 마음을 담아서, <strong>위글루!</strong></p>
+           
             </div>
 
             <div class="LOGO_blue">
@@ -1965,6 +1964,11 @@
                 </svg>
 
             </div>
+            <div class="last_phone_img">
+                <img src="Img/Mockup_phone_App.png" alt="MockUp img">
+            </div>
+
+
         </section>
 
         <section id="last_wegluePhoto">

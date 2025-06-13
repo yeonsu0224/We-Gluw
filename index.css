@@ -226,6 +226,13 @@ a {
 .nav_button {
     color: #ffffFF;
     cursor: pointer;
+    opacity:0.8;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav_button:hover {
+    font-weight: 500;
+     opacity:1;
 }
 
 .first_svg {
@@ -469,11 +476,11 @@ a {
 #Overview {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap:3%;
     position: relative;
     width: 100%;
-    height: 140vh;
+    height: 112vh;
     min-height: 1000px;
     padding: 100px;
     background-color: #0053FF;
@@ -2727,7 +2734,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height:15%;
+    /* height:15%; */
 }
 
 
@@ -2745,7 +2752,24 @@ a {
     align-items: center;
     justify-content: center;
     width:100%;
-    height:50%;
+    
+}
+
+.LOGO_blue svg{
+    width:20%;
+}
+
+.last_phone_img{
+    margin-top:3%;
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+
+.last_phone_img img{
+    width:30%;
+    height:100%;
+    margin-right:50px;
 }
 
 

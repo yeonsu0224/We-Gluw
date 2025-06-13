@@ -4,6 +4,11 @@ const videoSection = document.getElementById("introVideo_wrap"); // 비디오를
 const videoPlayback = 1000;
 const videoEnding = 300;
 
+//네비게이션
+const goUpButton = document.getElementById("goUpButton")
+const mainNavBtns = document.querySelectorAll(".nav_button")
+const fixedHeaderHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+
 // 호버 혹은 클릭 인터랙션을 위한 요소 불러오기
 let user_box_cover = document.querySelectorAll(".user_box_cover");
 let designSystem_Symbol_box = document.querySelector(".Symbol");
@@ -13,6 +18,9 @@ let symbol_grid = document.querySelector(".symbol_grid");
 // keyfunction 카드 스크롤 애니메이션을 위한 불러오기
 const functionTextBoxs = document.querySelectorAll(".functionTextBox");
 const functionCards = document.querySelectorAll(".function_list");
+
+
+
 
 // Lenis 인스턴스 생성
 const lenis = new window.Lenis({
@@ -28,6 +36,65 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+
+
+
+//네비게이션 구현
+
+goUpButton.addEventListener("click", ()=> {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+})
+
+mainNavBtns.forEach(function (NavBtn) {
+    NavBtn.addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 앵커 동작 방지
+
+        const targetId = this.dataset.section; // 예: "#section1"
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement && typeof lenis !== 'undefined') {
+            lenis.scrollTo(targetElement, {
+                offset: fixedHeaderHeight * -1, // fixedHeaderHeight 만큼 위로 보정
+                                              // Lenis는 offset을 픽셀 단위로 받으며,
+                                              // 고정 헤더만큼 덜 스크롤해야 하므로 음수 값을 줍니다.
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            });
+        } else if (targetElement) {
+            // Lenis가 정의되지 않았을 경우의 폴백
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - fixedHeaderHeight;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // 기본 앵커 동작 방지
+
+        const targetId = this.getAttribute('href'); // "#section1"
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // 부드러운 스크롤
+                block: 'start'      // 요소의 시작 부분이 뷰포트 상단에 오도록 (기본값)
+                // block: 'center'  // 요소의 중앙 부분이 뷰포트 중앙에 오도록
+                // block: 'end'     // 요소의 끝 부분이 뷰포트 하단에 오도록
+            });
+        }
+    });
+});
+
 
 
 
@@ -96,5 +163,4 @@ setInterval(() => {
   symbol_grid.classList.remove("on");
 }, 6000);
 
-console.log(coliving_board);
 

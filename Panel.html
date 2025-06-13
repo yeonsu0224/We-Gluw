@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="Panel.css" />
+  <link rel="stylesheet" href="Phone.css" />
 
   <title>WeGlue</title>
 
@@ -20,12 +21,28 @@
 
 <body>
 
-  <section id="panel">
 
 
-    <div class="panel_Introduction_button"></div>
+  
+  <section id="panel" class="panel_wrap">
 
-    <img class="panel_img on" src="Img/panel/panel_1.png" alt="panel screen">
+    <div class="panel_Introduction_div">
+
+
+    <!-- <svg class="svg-border" viewBox="0 0 200 200">
+      <rect x="0" y="0" width="200" height="200" fill="none" stroke="#007bff" stroke-width="5" stroke-dasharray="10 10"
+        stroke-dashoffset="0" />
+    </svg> -->
+
+  
+  </div>
+
+
+
+
+
+
+    <img class="panel_img  on" src="Img/panel/panel_1.png" alt="panel screen">
     <img class="panel_img" src="Img/panel/panel_2.png" alt="panel screen">
 
     <div class="panel_img">
@@ -176,20 +193,68 @@
         </div>
         <div class="button-container">
           <button class="action-button close-button">이전</button>
-          <button class="action-button select-button">푸드리스트에 추가</button>
+          <button class="action-button select-button end">푸드리스트에 추가</button>
         </div>
       </div>
 
     </div>
     </div>
 
+
+
+
+    <div class="panel_img voice">
+      <div class="audio-container">
+        <p class="listening-text">등록할 식자재 명을 말해주세요.</p>
+        <div class="circle">
+          <svg class="voice_start_svg" width="106" height="168" viewBox="0 0 106 168" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="26.6016" y="0.375" width="52.7985" height="103.528" rx="26.3993" fill="white" />
+            <path d="M32.541 161.086H73.4571" stroke="white" stroke-width="11.88" stroke-linecap="round" />
+            <path
+              d="M99.0923 81.8125C99.0923 106.226 78.4553 126.018 52.9983 126.018C27.5413 126.018 6.9043 106.226 6.9043 81.8125"
+              stroke="white" stroke-width="11.8807" stroke-linecap="round" />
+            <path d="M52.9961 126.016L52.9997 161.089" stroke="white" stroke-width="11.8807" stroke-linecap="round" />
+          </svg>
+
+          <svg class="voice_end_svg" width="221" height="153" viewBox="0 0 221 153" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.8281 61.9083L81.9138 139.598L207.781 13.7305" stroke="white" stroke-width="26"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+
+
+          <div class="icon">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+          </div>
+
+
+        </div>
+        <p class="title-text">
+          <span class="quote">"</span><span class="typing">딸기케이크</span><span class="quote">"</span>
+        </p>
+      </div>
+      <img class="panel_img_voice" src="Img/panel/panel_voice.png" alt="panel screen">
+      <div class="button-container voice">
+        <button class="action-button re">다시 말하기</button>
+        <button class="action-button select-button">확인</button>
+      </div>
+    </div>
+
     <div class="panel_img">
       <p class="cake_Name">딸기 케이크</p>
-      <img  src="Img/panel/panel_7.png" alt="panel screen">
+      <img src="Img/panel/panel_7.png" alt="panel screen">
+      <div class="button-container">
+        <button class="action-button select-button panelEnd">완료!</button>
+      </div>
     </div>
-    <img class="panel_img" src="Img/panel/panel_8.png" alt="panel screen">
-    <img class="panel_img" src="Img/panel/panel_9.png" alt="panel screen">
-    <img class="panel_img" src="Img/panel/panel_10.png" alt="panel screen">
+
+
+
+
 
 
 
@@ -199,6 +264,286 @@
 
 
   </section>
+
+
+  <section id="Phone">
+
+    <div class="nav-bar">
+      <div class="nav-item food_list active">
+        <img src="Img/phone_screen/NavIcon_1.png" alt="아이콘1">
+      </div>
+      <div class="nav-item">
+        <img src="Img/phone_screen/NavIcon_2.png" alt="아이콘2">
+      </div>
+      <div class="nav-item mypage">
+        <img src="Img/phone_screen/NavIcon_3.png" alt="아이콘3">
+      </div>
+      <div class="nav-item">
+        <img src="Img/phone_screen/NavIcon_4.png" alt="아이콘4">
+      </div>
+
+    </div>
+    <img class="phone_Mockup_interaction" src="Img/Mockup_iPhone_.png" alt="Iphone">
+
+
+    <div class="phone_screen_placeHolder">
+      <div class="phone_screen look">
+        <img class="phone_screen_img" src="Img/phone_screen/phhone_1.png" alt="We-Glue app screen">
+        <img class="alert_img" src="Img/phone_screen/phhone_alert.png" alt="We-Glue app alert_img">
+      </div>
+      <div class="phone_screen appOn">
+        <img class="phone_screen_img" src="Img/phone_screen/phhone_app_on.png" alt="We-Glue app screen">
+
+      </div>
+
+      <div class="phone_screen food_list">
+
+        <div class="GoWarehousing_btn">
+          입출고 기록
+        </div>
+
+
+        <div class="phone_screen_bottom_grd">
+          <img src="Img/phone_screen/phhone_list_bottom.png" alt="Gradient at the bottom of the screen">
+        </div>
+
+        <img class="phone_screen_img food_list" src="Img/phone_screen/phhone_2.png" alt="We-Glue app screen">
+
+      </div>
+
+      <div class="phone_screen Warehousing rightWaiting">
+
+        <div class="Details_btn">
+          상세 입출고 보러가기
+        </div>
+        <img class="phone_screen_img Warehousing" src="Img/phone_screen/phhone_3.png" alt="We-Glue app screen">
+      </div>
+
+      <div class="phone_screen WarehousingDetails rightWaiting">
+
+        <div class="back_btn">
+
+        </div>
+        <img class="phone_screen_img WarehousingDetails" src="Img/phone_screen/phhone_4.png" alt="We-Glue app screen">
+
+      </div>
+
+      <div class="phone_screen myPage rightWaiting">
+        <div class="report_btn">
+
+        </div>
+        <img class="phone_screen_img food_list" src="Img/phone_screen/phhone_5.png" alt="We-Glue app screen">
+
+      </div>
+      <div class="phone_screen report rightWaiting">
+        <!-- <div class="phone_screen report"> -->
+        <img class="phone_screen_img" src="Img/phone_screen/phhone_6.png" alt="We-Glue app screen">
+        <div class="Progress">
+          <div class="Progress_line"></div>
+        </div>
+
+        <p class="report_question">윤슬기님, 안녕하세요! <br>무엇을 도와드릴까요?</p>
+
+        <div class="choice_wrap">
+
+
+          <div class="choices on">
+            <div class="help-grid">
+              <div class="help-box " data-answer="wrong">
+                <img src="Img/phone_screen/help_icon_1.png" alt="냉장고 고장 아이콘" />
+                <p>냉장고 고장</p>
+              </div>
+              <div class="help-box " data-answer="correct">
+                <img src="Img/phone_screen/help_icon_2.png" alt="사용자 신고 아이콘" />
+                <p>사용자 신고</p>
+              </div>
+              <div class="help-box" data-answer="wrong">
+                <img src="Img/phone_screen/help_icon_3.png" alt="계정 오류 아이콘" />
+                <p>계정 오류</p>
+              </div>
+              <div class="help-box " data-answer="wrong">
+                <img src="Img/phone_screen/help_icon_4.png" alt="기타 문의 아이콘" />
+                <p class="Otherinquiries">기타 문의</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="choices ">
+            <div class="user-list-report ">
+              <div class="user-box-report alert" data-answer="correct">
+                <img src="Img/phone_screen/choi.png" alt="최성민 프로필" />
+                <div class="user-info">
+                  <span class="name">최성민 <span class="dot"></span></span>
+                  <span class="status">최근 무단 출고자</span>
+                </div>
+              </div>
+
+              <div class="user-box-report " data-answer="wrong">
+                <img src="Img/phone_screen/kim.png" alt="김지훈 프로필" />
+                <div class="user-info">
+                  <span class="name">김지훈</span>
+                  <span class="status off">최근 무단 출고자</span>
+                </div>
+              </div>
+
+              <div class="user-box-report " data-answer="wrong">
+                <img src="Img/phone_screen/jang.png" alt="장혜영 프로필" />
+                <div class="user-info">
+                  <span class="name">장혜영</span>
+                  <span class="status off">최근 무단 출고자</span>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+          <div class="choices ">
+            <div class="help-grid">
+              <div class="help-box " data-answer="correct">
+                <img src="Img/phone_screen/report_icon_1.png" alt="냉장고 고장 아이콘" />
+                <p>도난/분실</p>
+              </div>
+              <div class="help-box " data-answer="wrong">
+                <img src="Img/phone_screen/report_icon_2.png" alt="사용자 신고 아이콘" />
+                <p>식자재 방치</p>
+              </div>
+              <div class="help-box" data-answer="wrong">
+                <img src="Img/phone_screen/report_icon_3.png" alt="계정 오류 아이콘" />
+                <p>계정 도용</p>
+              </div>
+              <div class="help-box " data-answer="wrong">
+                <img src="Img/phone_screen/help_icon_4.png" alt="기타 문의 아이콘" />
+                <p class="Otherinquiries">기타</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="choices">
+            <div class="report-section">
+              <div class="report-title">도난/분실</div>
+              <textarea class="report-input" placeholder="신고 사유를 입력해주세요."></textarea>
+            </div>
+
+          </div>
+
+          <div class="choices">
+            <div class="confirm-section">
+              <div class="confirm_box">
+                <div class="report_confirm_box ">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.539133 6.16844L6.62091 13.8109L14.104 1.25391" stroke="white" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+
+                </div>
+                <p>신고 내용은 사실과 다름없으며, 이에 동의합니다.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="choices">
+
+            <div class="report_completed">
+              <svg width="229" height="242" viewBox="0 0 229 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="22.3202" y="22.2147" width="179.633" height="180.629">
+                  <div xmlns="http://www.w3.org/1999/xhtml"
+                    style="backdrop-filter:blur(4.42px);clip-path:url(#bgblur_0_1767_4728_clip_path);height:100%;width:100%">
+                  </div>
+                </foreignObject>
+                <g filter="url(#filter0_d_1767_4728)" data-figma-bg-blur-radius="8.83995">
+                  <circle cx="111.556" cy="111.45" r="80.3955" fill="url(#paint0_linear_1767_4728)" fill-opacity="0.9"
+                    shape-rendering="crispEdges" />
+                </g>
+                <g filter="url(#filter1_d_1767_4728)">
+                  <path d="M70.0273 109.537L100.121 143.875L155.754 88.2422" stroke="white" stroke-width="11.4919"
+                    stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges" />
+                </g>
+                <path
+                  d="M199.2 197.907C199.604 195.726 202.729 195.726 203.133 197.907L205.153 208.812C205.304 209.627 205.941 210.264 206.755 210.414L217.661 212.434C219.842 212.838 219.842 215.963 217.661 216.367L206.755 218.387C205.941 218.538 205.304 219.175 205.153 219.99L203.133 230.895C202.729 233.076 199.604 233.076 199.2 230.895L197.18 219.99C197.029 219.175 196.392 218.538 195.578 218.387L184.672 216.367C182.491 215.963 182.491 212.838 184.672 212.434L195.578 210.414C196.392 210.264 197.029 209.627 197.18 208.812L199.2 197.907Z"
+                  fill="#56A1FF" />
+                <path
+                  d="M20.262 8.70469C20.5806 6.98483 23.0449 6.98484 23.3635 8.70469L24.9562 17.3042C25.0752 17.9463 25.5776 18.4488 26.2197 18.5677L34.8192 20.1604C36.5391 20.479 36.5391 22.9434 34.8192 23.2619L26.2197 24.8547C25.5776 24.9736 25.0752 25.476 24.9562 26.1182L23.3635 34.7177C23.0449 36.4375 20.5806 36.4375 20.262 34.7177L18.6693 26.1182C18.5503 25.476 18.0479 24.9736 17.4057 24.8547L8.80625 23.2619C7.0864 22.9434 7.0864 20.479 8.80626 20.1604L17.4057 18.5677C18.0479 18.4488 18.5503 17.9463 18.6693 17.3042L20.262 8.70469Z"
+                  fill="#56A1FF" />
+                <defs>
+                  <filter id="filter0_d_1767_4728" x="22.3202" y="22.2147" width="179.633" height="180.629"
+                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha" />
+                    <feOffset dx="2" dy="3" />
+                    <feGaussianBlur stdDeviation="4" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1767_4728" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1767_4728" result="shape" />
+                  </filter>
+                  <clipPath id="bgblur_0_1767_4728_clip_path" transform="translate(-22.3202 -22.2147)">
+                    <circle cx="111.556" cy="111.45" r="80.3955" />
+                  </clipPath>
+                  <filter id="filter1_d_1767_4728" x="57.3812" y="78.5961" width="111.019" height="80.925"
+                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha" />
+                    <feOffset dy="3" />
+                    <feGaussianBlur stdDeviation="3.45" />
+                    <feComposite in2="hardAlpha" operator="out" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1767_4728" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1767_4728" result="shape" />
+                  </filter>
+                  <linearGradient id="paint0_linear_1767_4728" x1="31.1602" y1="31.0547" x2="191.951" y2="191.846"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#57A8FF" />
+                    <stop offset="0.649038" stop-color="#0073FF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="nextChoice_btn">
+          다음
+        </div>
+
+        <div class="bg_circle"></div>
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </section>
+
 
   <script src="Panel.js"></script>
 
