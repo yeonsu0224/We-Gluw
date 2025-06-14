@@ -8,10 +8,713 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="Panel.css" />
+
 </head>
 
 <body>
     <div class="wrap">
+
+
+        <section id="interaction">
+            <p class="subheading">Try it out!</p>
+            <p class="description">슬기의 케이크가 사라졌어요!<br>
+                직접 위글루 앱을 실행하여 케이크를 훔친 범인을 조회해보세요.</p>
+            <ul id="interaction_panel">
+
+                <li class="Interactionvideo_wrap">
+                    <video class="Interactionvideo" muted playsinline>
+                        <source src="Interaction_IOT.mp4" type="video/mp4" />
+                    </video>
+
+                    <div class="panel_mockup_wrap">
+
+                        <div class="panel_mockup_plasehilder">
+                            <img class="panel_mockup" src="Img/panel/panel_2.png">
+                        </div>
+                    </div>
+
+                </li>
+
+                <li class="tutorialMessage A">
+                    <p>냉장고에 로그인해 <strong>잠금을 해제</strong>하세요.
+                    </p>
+                </li>
+                <li class="tutorialMessage B">
+                    <p></p>
+                </li>
+
+
+
+                <li class="cake_box">
+                <li class="tutorialMessage cake">
+                    <p>클릭해서 케이크 넣기</p>
+                </li>
+                </li>
+
+
+
+                <li class="checklist">
+                    <!-- HTML -->
+
+                    <p class="Check_It_text">Check It out!</p>
+
+                    <div class="checkItem ">
+                        <span class="number">1</span>
+                        <span class="checkItemtext">위글루 앱 실행</span>
+                        <div class="checkItem_icon">
+                            <svg width="19" height="12" viewBox="0 0 19 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71094 4.58939L7.77662 10.6561L17.0656 1.36719" stroke="#222222"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="checkItem ">
+                        <span class="number">2</span>
+                        <span class="checkItemtext">입출고 내역 확인</span>
+                        <div class="checkItem_icon">
+                            <svg width="19" height="12" viewBox="0 0 19 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71094 4.58939L7.77662 10.6561L17.0656 1.36719" stroke="#222222"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="checkItem ">
+                        <span class="number">3</span>
+                        <span class="checkItemtext">신고하기</span>
+                        <div class="checkItem_icon">
+                            <svg width="19" height="12" viewBox="0 0 19 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.71094 4.58939L7.77662 10.6561L17.0656 1.36719" stroke="#222222"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                </li>
+
+                <li class="interaction_cover">
+
+                    <div class="cover_box">
+                        <p>위글루를 실행해보세요!</p>
+                        <div class="interaction_start_btn">START</div>
+                    </div>
+
+
+
+                    <img src="Img/Interaction_cover.png" alt="iphone">
+                    <div class="interaction_cover_bg">
+                    </div>
+
+
+
+                </li>
+                <li class="panel A">
+                    <!-- <img class="refrigerator_img" src="Img/normal_close.png"> -->
+                    <!-- <div class="Mission_bar">
+                        <div class="Mission_num">01</div> 앱을 조작해 범인을 찾으세요
+                    </div> -->
+
+                </li>
+                <li class="panel B">
+
+
+
+
+
+                    <section id="panel" class="panel_wrap">
+
+                        <div class="panel_Introduction_div">
+
+
+                            <!-- <svg class="svg-border" viewBox="0 0 200 200">
+        <rect x="0" y="0" width="200" height="200" fill="none" stroke="#007bff" stroke-width="5" stroke-dasharray="10 10"
+            stroke-dashoffset="0" />
+        </svg> -->
+
+
+                        </div>
+
+
+
+
+
+
+                        <img class="panel_img  on" src="Img/panel/panel_1.png" alt="panel screen">
+                        <img class="panel_img" src="Img/panel/panel_2.png" alt="panel screen">
+
+                        <div class="panel_img">
+                            <div id="password">
+
+                                <ul class="password_length">
+                                    <li class="password_circle"></li>
+                                    <li class="password_circle"></li>
+                                    <li class="password_circle"></li>
+                                    <li class="password_circle"></li>
+                                    <li class="password_circle"></li>
+                                    <li class="password_circle"></li>
+
+                                </ul>
+
+                                <div class="keypad-container">
+                                    <div class="keypad-grid">
+                                        <div class="keypad-button">
+                                            <span class="number">1</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">2</span>
+                                            <span class="letters">ABC</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">3</span>
+                                            <span class="letters">DEF</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">4</span>
+                                            <span class="letters">GHI</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">5</span>
+                                            <span class="letters">JKL</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">6</span>
+                                            <span class="letters">MNO</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">7</span>
+                                            <span class="letters">PQRS</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">8</span>
+                                            <span class="letters">TUV</span>
+                                        </div>
+                                        <div class="keypad-button">
+                                            <span class="number">9</span>
+                                            <span class="letters">WXYZ</span>
+                                        </div>
+                                        <div class="keypad-button zero">
+                                            <span class="number">0</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <img src="Img/panel/panel_3.png" alt="panel screen">
+
+                        </div>
+                        <img class="panel_img" src="" alt="입/출고 감지 중">
+
+                        <div class="panel_img">
+                            <div id="SelectPicture">
+
+
+
+                                <div class="cake_photo_Select"></div>
+
+
+                                <img src="Img/panel/panel_4.png" alt="panel screen">
+                                <div class="button-container">
+                                    <button class="action-button close-button">닫기</button>
+                                    <button class="action-button select-button">선택</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="panel_img">
+                            <img src="Img/panel/panel_6.png" alt="panel screen">
+
+
+                            <div class="main-container">
+                                <div class="icon-button voice-icon">
+                                    <svg width="24" height="40" viewBox="0 0 24 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="5.67188" y="0.964844" width="12.5233" height="24.5557" rx="6.26163"
+                                            fill="#0053FF" />
+                                        <path
+                                            d="M22.866 20.2812C22.866 26.072 17.9711 30.7663 11.933 30.7663C5.89487 30.7663 1 26.072 1 20.2812"
+                                            stroke="#0053FF" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M11.9336 30.7656V38.4719" stroke="#0053FF" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    음성으로 등록
+
+                                </div>
+                                <div class="ui-box">
+                                    <div class="ui-header"></div>
+
+                                    <div class="section-top">
+                                        <div class="image-placeholder">
+                                            <img src="Img/panel/cake_photo.png" alt="식자재 이미지">
+                                        </div>
+                                        <div class="input-group search-input">
+                                            <input type="text" placeholder=" 딸기케이크">
+
+
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="section-row storage-location">
+                                        <span class="label"> 보관위치</span>
+
+                                        <span class="location-text"> 냉장실</span>
+                                        <button class="icon-button dropdown-arrow" aria-label="드롭다운">
+                                            <svg class="dropdown-arrow-svg" width="18" height="27" viewBox="0 0 18 27"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2.16797 8.51953L9.24121 1.44531L16.0522 8.25634"
+                                                    stroke="#848484" stroke-width="2" stroke-linecap="square" />
+                                                <path d="M2.16797 18.5156L9.24121 25.5898L16.0522 18.7788"
+                                                    stroke="#848484" stroke-width="2" stroke-linecap="square" />
+                                            </svg>
+
+                                        </button>
+                                    </div>
+
+                                    <div class="section-row date-input">
+                                        <span class="label"> 입고일</span>
+                                        <input type="text" class="date-field" value="2025. 07. 15." readonly>
+                                    </div>
+                                    <div class="section-row date-input">
+                                        <span class="label"> 만료일</span>
+                                        <input type="text" class="date-field" value="2025. 07. 18." readonly>
+                                    </div>
+
+                                    <div class="section-row alert-toggle">
+                                        <span class="label">기한 임박 알림</span>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="ui-footer"></div>
+
+
+                                </div>
+                                <div class="button-container">
+                                    <button class="action-button close-button">이전</button>
+                                    <button class="action-button select-button end">푸드리스트에 추가</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="panel_img voice">
+                            <div class="audio-container">
+                                <p class="listening-text">등록할 식자재 명을 말해주세요.</p>
+                                <div class="circle">
+                                    <svg class="voice_start_svg" width="106" height="168" viewBox="0 0 106 168"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="26.6016" y="0.375" width="52.7985" height="103.528" rx="26.3993"
+                                            fill="white" />
+                                        <path d="M32.541 161.086H73.4571" stroke="white" stroke-width="11.88"
+                                            stroke-linecap="round" />
+                                        <path
+                                            d="M99.0923 81.8125C99.0923 106.226 78.4553 126.018 52.9983 126.018C27.5413 126.018 6.9043 106.226 6.9043 81.8125"
+                                            stroke="white" stroke-width="11.8807" stroke-linecap="round" />
+                                        <path d="M52.9961 126.016L52.9997 161.089" stroke="white" stroke-width="11.8807"
+                                            stroke-linecap="round" />
+                                    </svg>
+
+                                    <svg class="voice_end_svg" width="221" height="153" viewBox="0 0 221 153"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.8281 61.9083L81.9138 139.598L207.781 13.7305" stroke="white"
+                                            stroke-width="26" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+
+
+                                    <div class="icon">
+                                        <span class="bar bar1"></span>
+                                        <span class="bar bar2"></span>
+                                        <span class="bar bar3"></span>
+                                    </div>
+
+
+                                </div>
+                                <p class="title-text">
+                                    <span class="quote">"</span><span class="typing">딸기케이크</span><span
+                                        class="quote">"</span>
+                                </p>
+                            </div>
+                            <img class="panel_img_voice" src="Img/panel/panel_voice.png" alt="panel screen">
+                            <div class="button-container voice">
+                                <button class="action-button re">다시 말하기</button>
+                                <button class="action-button select-button voice">확인</button>
+                            </div>
+                        </div>
+                        <div class="panel_img">
+                            <p class="cake_Name">딸기 케이크</p>
+                            <img src="Img/panel/panel_7.png" alt="panel screen">
+                            <div class="button-container">
+                                <button class="action-button select-button panelEnd">완료!</button>
+                            </div>
+
+                        </div>
+                    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </li>
+                <li class="Phone_pos" id="Phone_nav">
+                    <section id="Phone">
+
+                        <div class="nav-bar">
+                            <div class="nav-item food_list active">
+                                <img src="Img/phone_screen/NavIcon_1.png" alt="아이콘1">
+                            </div>
+                            <div class="nav-item">
+                                <img src="Img/phone_screen/NavIcon_2.png" alt="아이콘2">
+                            </div>
+                            <div class="nav-item">
+                                <img src="Img/phone_screen/NavIcon_3.png" alt="아이콘3">
+                            </div>
+                            <div class="nav-item">
+                                <img src="Img/phone_screen/NavIcon_4.png" alt="아이콘4">
+                            </div>
+
+                        </div>
+                        <img class="phone_Mockup_interaction" src="Img/Mockup_iPhone_.png" alt="Iphone">
+
+
+                        <div class="phone_screen_placeHolder">
+                            <div class="phone_screen look">
+                                <img class="phone_screen_img" src="Img/phone_screen/phhone_1.png"
+                                    alt="We-Glue app screen">
+                                <img class="alert_img" src="Img/phone_screen/phhone_alert.png"
+                                    alt="We-Glue app alert_img">
+                            </div>
+                            <div class="phone_screen appOn">
+                                <img class="phone_screen_img" src="Img/phone_screen/phhone_app_on.png"
+                                    alt="We-Glue app screen">
+
+                            </div>
+
+                            <div class="phone_screen food_list">
+
+                                <div class="GoWarehousing_btn">
+                                    새로운 내역을 확인해보세요!
+                                </div>
+
+
+                                <div class="phone_screen_bottom_grd">
+                                    <img src="Img/phone_screen/phhone_list_bottom.png"
+                                        alt="Gradient at the bottom of the screen">
+                                </div>
+
+                                <img class="phone_screen_img food_list new" src="Img/phone_screen/phhone_2_2.png"
+                                    alt="We-Glue app screen">
+                                <img class="phone_screen_img food_list old fadeoff" src="Img/phone_screen/phhone_2.png"
+                                    alt="We-Glue app screen">
+
+                            </div>
+
+                            <div class="phone_screen Warehousing rightWaiting">
+                                <!-- <div class="phone_screen Warehousing"> -->
+                                <div class="Details_btn">
+
+                                </div>
+                                <img class="phone_screen_img Warehousing " src="Img/phone_screen/phhone_3_2.png"
+                                    alt="We-Glue app screen">
+                                <img class="phone_screen_img Warehousing old" src="Img/phone_screen/phhone_3.png"
+                                    alt="We-Glue app screen">
+                            </div>
+
+                            <div class="phone_screen WarehousingDetails rightWaiting">
+
+
+                                <div class="report_btn">
+                                    <img src="Img/phone_screen/report_alert.png" alt="관리자에게 도움 요청 알람창">
+
+
+                                </div>
+                                <img class="phone_screen_img WarehousingDetails" src="Img/phone_screen/phhone_4.png"
+                                    alt="We-Glue app screen">
+
+                            </div>
+
+                            <!-- <div class="phone_screen myPage rightWaiting">
+        <div class="report_btn">
+
+        </div>
+        <img class="phone_screen_img food_list" src="Img/phone_screen/phhone_5.png" alt="We-Glue app screen">
+
+      </div> -->
+
+
+                            <div class="phone_screen report rightWaiting">
+                                <div class="phone_screen report">
+                                    <img class="phone_screen_img" src="Img/phone_screen/phhone_6.png"
+                                        alt="We-Glue app screen">
+                                    <div class="Progress">
+                                        <div class="Progress_line"></div>
+                                    </div>
+
+                                    <p class="report_question">윤슬기님, 안녕하세요! <br>무엇을 도와드릴까요?</p>
+
+                                    <div class="choice_wrap">
+
+
+                                        <div class="choices on">
+                                            <div class="help-grid">
+                                                <div class="help-box " data-answer="wrong">
+                                                    <img src="Img/phone_screen/help_icon_1.png" alt="냉장고 고장 아이콘" />
+                                                    <p>냉장고 고장</p>
+                                                </div>
+                                                <div class="help-box " data-answer="correct">
+                                                    <img src="Img/phone_screen/help_icon_2.png" alt="사용자 신고 아이콘" />
+                                                    <p>사용자 신고</p>
+                                                </div>
+                                                <div class="help-box" data-answer="wrong">
+                                                    <img src="Img/phone_screen/help_icon_3.png" alt="계정 오류 아이콘" />
+                                                    <p>계정 오류</p>
+                                                </div>
+                                                <div class="help-box " data-answer="wrong">
+                                                    <img src="Img/phone_screen/help_icon_4.png" alt="기타 문의 아이콘" />
+                                                    <p class="Otherinquiries">기타 문의</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="choices ">
+                                            <div class="user-list-report ">
+                                                <div class="user-box-report alert" data-answer="correct">
+                                                    <img src="Img/phone_screen/choi.png" alt="최성민 프로필" />
+                                                    <div class="user-info">
+                                                        <span class="name">최성민 <span class="dot"></span></span>
+                                                        <span class="status">최근 무단 출고자</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="user-box-report " data-answer="wrong">
+                                                    <img src="Img/phone_screen/kim.png" alt="김지훈 프로필" />
+                                                    <div class="user-info">
+                                                        <span class="name">김지훈</span>
+                                                        <span class="status off">최근 무단 출고자</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="user-box-report " data-answer="wrong">
+                                                    <img src="Img/phone_screen/jang.png" alt="장혜영 프로필" />
+                                                    <div class="user-info">
+                                                        <span class="name">장혜영</span>
+                                                        <span class="status off">최근 무단 출고자</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                        <div class="choices ">
+                                            <div class="help-grid">
+                                                <div class="help-box " data-answer="correct">
+                                                    <img src="Img/phone_screen/report_icon_1.png" alt="냉장고 고장 아이콘" />
+                                                    <p>도난/분실</p>
+                                                </div>
+                                                <div class="help-box " data-answer="wrong">
+                                                    <img src="Img/phone_screen/report_icon_2.png" alt="사용자 신고 아이콘" />
+                                                    <p>식자재 방치</p>
+                                                </div>
+                                                <div class="help-box" data-answer="wrong">
+                                                    <img src="Img/phone_screen/report_icon_3.png" alt="계정 오류 아이콘" />
+                                                    <p>계정 도용</p>
+                                                </div>
+                                                <div class="help-box " data-answer="wrong">
+                                                    <img src="Img/phone_screen/help_icon_4.png" alt="기타 문의 아이콘" />
+                                                    <p class="Otherinquiries">기타</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="choices">
+                                            <div class="report-section">
+                                                <div class="report-title">도난/분실</div>
+                                                <textarea class="report-input" placeholder="신고 사유를 입력해주세요."></textarea>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="choices">
+                                            <div class="confirm-section">
+                                                <div class="confirm_box">
+                                                    <div class="report_confirm_box ">
+                                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M0.539133 6.16844L6.62091 13.8109L14.104 1.25391"
+                                                                stroke="white" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+
+                                                    </div>
+                                                    <p>신고 내용은 사실과 다름없으며, 이에 동의합니다.</p>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="choices">
+
+                                            <div class="report_completed">
+                                                <svg width="229" height="242" viewBox="0 0 229 242" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <foreignObject x="22.3202" y="22.2147" width="179.633"
+                                                        height="180.629">
+                                                        <div xmlns="http://www.w3.org/1999/xhtml"
+                                                            style="backdrop-filter:blur(4.42px);clip-path:url(#bgblur_0_1767_4728_clip_path);height:100%;width:100%">
+                                                        </div>
+                                                    </foreignObject>
+                                                    <g filter="url(#filter0_d_1767_4728)"
+                                                        data-figma-bg-blur-radius="8.83995">
+                                                        <circle cx="111.556" cy="111.45" r="80.3955"
+                                                            fill="url(#paint0_linear_1767_4728)" fill-opacity="0.9"
+                                                            shape-rendering="crispEdges" />
+                                                    </g>
+                                                    <g filter="url(#filter1_d_1767_4728)">
+                                                        <path d="M70.0273 109.537L100.121 143.875L155.754 88.2422"
+                                                            stroke="white" stroke-width="11.4919" stroke-linecap="round"
+                                                            stroke-linejoin="round" shape-rendering="crispEdges" />
+                                                    </g>
+                                                    <path
+                                                        d="M199.2 197.907C199.604 195.726 202.729 195.726 203.133 197.907L205.153 208.812C205.304 209.627 205.941 210.264 206.755 210.414L217.661 212.434C219.842 212.838 219.842 215.963 217.661 216.367L206.755 218.387C205.941 218.538 205.304 219.175 205.153 219.99L203.133 230.895C202.729 233.076 199.604 233.076 199.2 230.895L197.18 219.99C197.029 219.175 196.392 218.538 195.578 218.387L184.672 216.367C182.491 215.963 182.491 212.838 184.672 212.434L195.578 210.414C196.392 210.264 197.029 209.627 197.18 208.812L199.2 197.907Z"
+                                                        fill="#56A1FF" />
+                                                    <path
+                                                        d="M20.262 8.70469C20.5806 6.98483 23.0449 6.98484 23.3635 8.70469L24.9562 17.3042C25.0752 17.9463 25.5776 18.4488 26.2197 18.5677L34.8192 20.1604C36.5391 20.479 36.5391 22.9434 34.8192 23.2619L26.2197 24.8547C25.5776 24.9736 25.0752 25.476 24.9562 26.1182L23.3635 34.7177C23.0449 36.4375 20.5806 36.4375 20.262 34.7177L18.6693 26.1182C18.5503 25.476 18.0479 24.9736 17.4057 24.8547L8.80625 23.2619C7.0864 22.9434 7.0864 20.479 8.80626 20.1604L17.4057 18.5677C18.0479 18.4488 18.5503 17.9463 18.6693 17.3042L20.262 8.70469Z"
+                                                        fill="#56A1FF" />
+                                                    <defs>
+                                                        <filter id="filter0_d_1767_4728" x="22.3202" y="22.2147"
+                                                            width="179.633" height="180.629"
+                                                            filterUnits="userSpaceOnUse"
+                                                            color-interpolation-filters="sRGB">
+                                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                                result="hardAlpha" />
+                                                            <feOffset dx="2" dy="3" />
+                                                            <feGaussianBlur stdDeviation="4" />
+                                                            <feComposite in2="hardAlpha" operator="out" />
+                                                            <feColorMatrix type="matrix"
+                                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                                            <feBlend mode="normal" in2="BackgroundImageFix"
+                                                                result="effect1_dropShadow_1767_4728" />
+                                                            <feBlend mode="normal" in="SourceGraphic"
+                                                                in2="effect1_dropShadow_1767_4728" result="shape" />
+                                                        </filter>
+                                                        <clipPath id="bgblur_0_1767_4728_clip_path"
+                                                            transform="translate(-22.3202 -22.2147)">
+                                                            <circle cx="111.556" cy="111.45" r="80.3955" />
+                                                        </clipPath>
+                                                        <filter id="filter1_d_1767_4728" x="57.3812" y="78.5961"
+                                                            width="111.019" height="80.925" filterUnits="userSpaceOnUse"
+                                                            color-interpolation-filters="sRGB">
+                                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                                result="hardAlpha" />
+                                                            <feOffset dy="3" />
+                                                            <feGaussianBlur stdDeviation="3.45" />
+                                                            <feComposite in2="hardAlpha" operator="out" />
+                                                            <feColorMatrix type="matrix"
+                                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+                                                            <feBlend mode="normal" in2="BackgroundImageFix"
+                                                                result="effect1_dropShadow_1767_4728" />
+                                                            <feBlend mode="normal" in="SourceGraphic"
+                                                                in2="effect1_dropShadow_1767_4728" result="shape" />
+                                                        </filter>
+                                                        <linearGradient id="paint0_linear_1767_4728" x1="31.1602"
+                                                            y1="31.0547" x2="191.951" y2="191.846"
+                                                            gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#57A8FF" />
+                                                            <stop offset="0.649038" stop-color="#0073FF" />
+                                                        </linearGradient>
+                                                    </defs>
+                                                </svg>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="nextChoice_btn">
+                                        다음
+                                    </div>
+
+                                    <div class="bg_circle"></div>
+
+
+
+
+
+
+
+
+                                </div>
+                </li>
+            </ul>
+
+
+        </section>
+
 
 
 
@@ -296,24 +999,6 @@
             <video id="video" type="" src="위글루_상황부여영상_완성.mp4" muted playsinline loop></video>
         </section>
 
-        <section id="interaction">
-            <p class="subheading">Try it out!</p>
-            <p class="description">슬기의 케이크가 사라졌어요!<br>
-                직접 위글루 앱을 실행하여 케이크를 훔친 범인을 조회해보세요.</p>
-            <ul id="interaction_panel">
-                <li class="panel A">
-                    <img class="refrigerator_img" src="Img/normal_close.png">
-                    <div class="Mission_bar">
-                        <div class="Mission_num">01</div> 앱을 조작해 범인을 찾으세요
-                    </div>
-
-                </li>
-                <li class="panel B">
-                    <img class="interaction_section_img" src="Img/Mockup_iPhone_.png">
-
-                </li>
-            </ul>
-        </section>
 
 
 
@@ -488,8 +1173,7 @@
                             fill="#F36900" />
                     </svg> -->
                                 <svg class="checkmark_svg" viewBox="0 0 100 100">
-                                    <path class="checkmark A" d="M10 30 L40 70 L90 10" 
-                                    />
+                                    <path class="checkmark A" d="M10 30 L40 70 L90 10" />
                                 </svg>
 
 
@@ -571,8 +1255,7 @@
                             </svg> -->
 
                                 <svg class="checkmark_svg" viewBox="0 0 100 100">
-                                    <path class="checkmark B" d="M10 30 L40 70 L90 10" 
-                                    />
+                                    <path class="checkmark B" d="M10 30 L40 70 L90 10" />
                                 </svg>
 
 
@@ -863,7 +1546,7 @@
 
 
                 </div>
-                <ul class="designSystem_grid" >
+                <ul class="designSystem_grid">
                     <li class="Symbol">
                         <p>Symbol</p>
 
@@ -1623,13 +2306,17 @@
 
                 <div class="ID_Lock_vento B">
                     <div class="ID_disc_text_box">
-                        <svg class="ID_arrow" width="395" height="55" viewBox="0 0 395 55" fill="none"
+
+
+                        <svg class="ID_arrow" width="545" height="55" viewBox="0 0 545 55" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="5" cy="5" r="5" transform="matrix(-1 0 0 1 10.9141 44.1641)" fill="#181818" />
+                            <circle cx="5" cy="5" r="5" transform="matrix(-1 0 0 1 10.3281 44.4297)" fill="#181818" />
                             <path
-                                d="M5.91406 49.1641L5.91406 6.16405C5.91406 3.40263 8.15264 1.16405 10.9141 1.16405L394.914 1.16406"
+                                d="M5.32812 49.4297L70.2436 2.38117C71.097 1.76269 72.1239 1.42967 73.1778 1.42967L544.71 1.42967"
                                 stroke="#181818" />
                         </svg>
+
+
 
                         <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -1747,7 +2434,7 @@
 
                     <img class="listening_refrigerator_img" src="Img/listening_refrigerator.png"
                         alt="listening_refrigerator">
-                    <div class="voice">
+                    <div class="voice_web">
                         <div class="voice_box">딸기 케이크로 등록해줘!</div>
                         <div class="voice_svg">
                             <svg width="19" height="30" viewBox="0 0 19 30" fill="none"
@@ -1959,13 +2646,15 @@
 
         <section id="last_blue_Logo">
             <div class="last_blue_Logo_textbox">
-            <p class="capy_line last_blue_Logo">차가운 공간 속 따뜻한 마음을 담아서, <strong>위글루!</strong></p>
-           
+                <p class="capy_line last_blue_Logo">차가운 공간 속 따뜻한 마음을 담아서, <strong>위글루!</strong></p>
+
             </div>
 
             <div class="LOGO_blue">
                 <svg width="644" height="163" viewBox="0 0 644 163" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.131877 33.8991H29.1797L31.2795 97.4194H29.5297L54.3778 33.8991H83.9506L86.7503 97.4194H84.6505L108.099 33.8991H138.021L96.5496 127.867H65.5769L61.7272 60.8471H67.1518L39.5039 127.867H8.70623L0.131877 33.8991ZM172.159 129.267C164.46 129.267 157.402 127.809 150.986 124.892C144.686 121.859 139.67 117.426 135.937 111.593C132.204 105.644 130.337 98.5276 130.337 90.2449C130.337 78.9291 132.67 68.8965 137.337 60.1472C142.003 51.3978 148.419 44.6317 156.585 39.8487C164.751 34.9491 173.85 32.4993 183.883 32.4993C197.765 32.4993 208.148 36.9323 215.031 45.7982C221.914 54.6642 224.713 67.3216 223.43 83.7704C223.547 82.9538 223.372 84.8203 222.905 89.37H151.86L155.185 70.4714H205.056L194.557 70.9963C194.791 65.9801 194.032 62.1304 192.282 59.4472C190.533 56.6474 187.674 55.2475 183.708 55.2475C178.575 55.2475 174.259 56.7058 170.759 59.6222C167.259 62.5387 164.634 66.68 162.885 72.0463C161.135 77.2959 160.26 83.4204 160.26 90.4199C160.26 95.2029 161.543 98.8192 164.11 101.269C166.793 103.602 170.409 104.769 174.959 104.769C179.275 104.769 183.008 103.894 186.158 102.144C189.424 100.277 191.932 97.6527 193.682 94.2696L218.355 105.994C213.339 113.693 207.04 119.526 199.457 123.492C191.874 127.342 182.775 129.267 172.159 129.267ZM290.398 120.343L305.622 33.8991H335.545L320.321 119.993C317.754 134.458 311.921 145.191 302.822 152.19C293.839 159.306 281.649 162.864 266.25 162.864C257.851 162.864 249.976 161.115 242.627 157.615C235.394 154.232 229.503 149.274 224.953 142.741L246.826 127.517C249.16 130.9 252.076 133.35 255.576 134.867C259.075 136.5 263.042 137.316 267.475 137.316C273.891 137.316 279.024 136.033 282.874 133.467C286.84 131.017 289.348 126.642 290.398 120.343ZM231.253 89.37C231.253 78.1708 233.469 68.2549 237.902 59.6222C242.335 50.9895 248.226 44.34 255.576 39.6737C263.042 34.8907 271.15 32.4993 279.899 32.4993C286.082 32.4993 291.098 33.8991 294.948 36.6989C298.914 39.4987 301.889 43.0568 303.872 47.3731C308.772 47.3731 311.571 52.7977 312.271 63.6469C313.088 74.3794 311.571 84.937 307.722 95.3195C303.989 105.702 298.797 110.893 292.148 110.893C289.465 115.093 285.673 118.651 280.774 121.568C275.991 124.367 270.45 125.767 264.15 125.767C258.667 125.767 253.359 124.367 248.226 121.568C243.21 118.768 239.127 114.626 235.977 109.143C232.827 103.661 231.253 97.0694 231.253 89.37ZM261.35 85.1703C261.35 89.8366 262.4 93.5113 264.5 96.1944C266.717 98.7609 270.158 100.044 274.824 100.044C279.841 100.044 284.099 98.7026 287.598 96.0195C291.098 93.3363 293.723 89.9533 295.473 85.8702C297.223 81.7872 298.097 77.5875 298.097 73.2712C298.097 68.6049 296.873 64.9885 294.423 62.422C292.09 59.7389 288.648 58.3973 284.099 58.3973C279.899 58.3973 276.049 59.6222 272.549 62.072C269.05 64.4052 266.308 67.6133 264.325 71.6963C262.342 75.7793 261.35 80.2706 261.35 85.1703ZM358.94 0.126697H388.862L366.464 127.867H336.541L358.94 0.126697ZM388.34 98.4693L399.714 33.8991H429.287L420.013 87.2701C419.196 92.0531 419.429 95.6112 420.713 97.9443C422.113 100.161 424.679 101.269 428.412 101.269C431.212 101.269 434.07 100.627 436.986 99.3442C439.903 97.9443 442.528 95.7861 444.861 92.8697C447.194 89.8366 448.769 85.9869 449.585 81.3206L457.985 33.8991H487.733L471.284 127.867H441.361L444.161 111.768C441.478 116.668 437.336 120.809 431.737 124.192C426.254 127.575 420.246 129.267 413.713 129.267C408.93 129.267 404.322 128.042 399.889 125.592C395.573 123.026 392.306 119.409 390.09 114.743C387.873 110.077 387.29 104.652 388.34 98.4693ZM533.254 129.267C525.554 129.267 518.497 127.809 512.08 124.892C505.781 121.859 500.765 117.426 497.031 111.593C493.298 105.644 491.432 98.5276 491.432 90.2449C491.432 78.9291 493.765 68.8965 498.431 60.1472C503.098 51.3978 509.514 44.6317 517.68 39.8487C525.846 34.9491 534.945 32.4993 544.978 32.4993C558.86 32.4993 569.243 36.9323 576.125 45.7982C583.008 54.6642 585.808 67.3216 584.525 83.7704C584.642 82.9538 584.467 84.8203 584 89.37H512.955L516.28 70.4714H566.151L555.652 70.9963C555.885 65.9801 555.127 62.1304 553.377 59.4472C551.627 56.6474 548.769 55.2475 544.803 55.2475C539.67 55.2475 535.354 56.7058 531.854 59.6222C528.354 62.5387 525.729 66.68 523.979 72.0463C522.23 77.2959 521.355 83.4204 521.355 90.4199C521.355 95.2029 522.638 98.8192 525.204 101.269C527.887 103.602 531.504 104.769 536.054 104.769C540.37 104.769 544.103 103.894 547.253 102.144C550.519 100.277 553.027 97.6527 554.777 94.2696L579.45 105.994C574.434 113.693 568.134 119.526 560.552 123.492C552.969 127.342 543.87 129.267 533.254 129.267ZM614.221 0.126697H643.268L633.294 56.6474L621.92 88.1451H604.421L604.246 56.6474L614.221 0.126697ZM611.421 98.1193C605.005 98.1193 600.163 99.6942 596.897 102.844C593.63 105.994 591.997 110.602 591.997 116.668C591.997 120.284 593.281 123.317 595.847 125.767C598.413 128.1 601.855 129.267 606.171 129.267C612.587 129.267 617.429 127.692 620.695 124.542C623.962 121.276 625.595 116.668 625.595 110.718C625.595 107.102 624.312 104.127 621.745 101.794C619.179 99.3442 615.737 98.1193 611.421 98.1193Z" fill="#0053FF"/>
+                    <path
+                        d="M0.131877 33.8991H29.1797L31.2795 97.4194H29.5297L54.3778 33.8991H83.9506L86.7503 97.4194H84.6505L108.099 33.8991H138.021L96.5496 127.867H65.5769L61.7272 60.8471H67.1518L39.5039 127.867H8.70623L0.131877 33.8991ZM172.159 129.267C164.46 129.267 157.402 127.809 150.986 124.892C144.686 121.859 139.67 117.426 135.937 111.593C132.204 105.644 130.337 98.5276 130.337 90.2449C130.337 78.9291 132.67 68.8965 137.337 60.1472C142.003 51.3978 148.419 44.6317 156.585 39.8487C164.751 34.9491 173.85 32.4993 183.883 32.4993C197.765 32.4993 208.148 36.9323 215.031 45.7982C221.914 54.6642 224.713 67.3216 223.43 83.7704C223.547 82.9538 223.372 84.8203 222.905 89.37H151.86L155.185 70.4714H205.056L194.557 70.9963C194.791 65.9801 194.032 62.1304 192.282 59.4472C190.533 56.6474 187.674 55.2475 183.708 55.2475C178.575 55.2475 174.259 56.7058 170.759 59.6222C167.259 62.5387 164.634 66.68 162.885 72.0463C161.135 77.2959 160.26 83.4204 160.26 90.4199C160.26 95.2029 161.543 98.8192 164.11 101.269C166.793 103.602 170.409 104.769 174.959 104.769C179.275 104.769 183.008 103.894 186.158 102.144C189.424 100.277 191.932 97.6527 193.682 94.2696L218.355 105.994C213.339 113.693 207.04 119.526 199.457 123.492C191.874 127.342 182.775 129.267 172.159 129.267ZM290.398 120.343L305.622 33.8991H335.545L320.321 119.993C317.754 134.458 311.921 145.191 302.822 152.19C293.839 159.306 281.649 162.864 266.25 162.864C257.851 162.864 249.976 161.115 242.627 157.615C235.394 154.232 229.503 149.274 224.953 142.741L246.826 127.517C249.16 130.9 252.076 133.35 255.576 134.867C259.075 136.5 263.042 137.316 267.475 137.316C273.891 137.316 279.024 136.033 282.874 133.467C286.84 131.017 289.348 126.642 290.398 120.343ZM231.253 89.37C231.253 78.1708 233.469 68.2549 237.902 59.6222C242.335 50.9895 248.226 44.34 255.576 39.6737C263.042 34.8907 271.15 32.4993 279.899 32.4993C286.082 32.4993 291.098 33.8991 294.948 36.6989C298.914 39.4987 301.889 43.0568 303.872 47.3731C308.772 47.3731 311.571 52.7977 312.271 63.6469C313.088 74.3794 311.571 84.937 307.722 95.3195C303.989 105.702 298.797 110.893 292.148 110.893C289.465 115.093 285.673 118.651 280.774 121.568C275.991 124.367 270.45 125.767 264.15 125.767C258.667 125.767 253.359 124.367 248.226 121.568C243.21 118.768 239.127 114.626 235.977 109.143C232.827 103.661 231.253 97.0694 231.253 89.37ZM261.35 85.1703C261.35 89.8366 262.4 93.5113 264.5 96.1944C266.717 98.7609 270.158 100.044 274.824 100.044C279.841 100.044 284.099 98.7026 287.598 96.0195C291.098 93.3363 293.723 89.9533 295.473 85.8702C297.223 81.7872 298.097 77.5875 298.097 73.2712C298.097 68.6049 296.873 64.9885 294.423 62.422C292.09 59.7389 288.648 58.3973 284.099 58.3973C279.899 58.3973 276.049 59.6222 272.549 62.072C269.05 64.4052 266.308 67.6133 264.325 71.6963C262.342 75.7793 261.35 80.2706 261.35 85.1703ZM358.94 0.126697H388.862L366.464 127.867H336.541L358.94 0.126697ZM388.34 98.4693L399.714 33.8991H429.287L420.013 87.2701C419.196 92.0531 419.429 95.6112 420.713 97.9443C422.113 100.161 424.679 101.269 428.412 101.269C431.212 101.269 434.07 100.627 436.986 99.3442C439.903 97.9443 442.528 95.7861 444.861 92.8697C447.194 89.8366 448.769 85.9869 449.585 81.3206L457.985 33.8991H487.733L471.284 127.867H441.361L444.161 111.768C441.478 116.668 437.336 120.809 431.737 124.192C426.254 127.575 420.246 129.267 413.713 129.267C408.93 129.267 404.322 128.042 399.889 125.592C395.573 123.026 392.306 119.409 390.09 114.743C387.873 110.077 387.29 104.652 388.34 98.4693ZM533.254 129.267C525.554 129.267 518.497 127.809 512.08 124.892C505.781 121.859 500.765 117.426 497.031 111.593C493.298 105.644 491.432 98.5276 491.432 90.2449C491.432 78.9291 493.765 68.8965 498.431 60.1472C503.098 51.3978 509.514 44.6317 517.68 39.8487C525.846 34.9491 534.945 32.4993 544.978 32.4993C558.86 32.4993 569.243 36.9323 576.125 45.7982C583.008 54.6642 585.808 67.3216 584.525 83.7704C584.642 82.9538 584.467 84.8203 584 89.37H512.955L516.28 70.4714H566.151L555.652 70.9963C555.885 65.9801 555.127 62.1304 553.377 59.4472C551.627 56.6474 548.769 55.2475 544.803 55.2475C539.67 55.2475 535.354 56.7058 531.854 59.6222C528.354 62.5387 525.729 66.68 523.979 72.0463C522.23 77.2959 521.355 83.4204 521.355 90.4199C521.355 95.2029 522.638 98.8192 525.204 101.269C527.887 103.602 531.504 104.769 536.054 104.769C540.37 104.769 544.103 103.894 547.253 102.144C550.519 100.277 553.027 97.6527 554.777 94.2696L579.45 105.994C574.434 113.693 568.134 119.526 560.552 123.492C552.969 127.342 543.87 129.267 533.254 129.267ZM614.221 0.126697H643.268L633.294 56.6474L621.92 88.1451H604.421L604.246 56.6474L614.221 0.126697ZM611.421 98.1193C605.005 98.1193 600.163 99.6942 596.897 102.844C593.63 105.994 591.997 110.602 591.997 116.668C591.997 120.284 593.281 123.317 595.847 125.767C598.413 128.1 601.855 129.267 606.171 129.267C612.587 129.267 617.429 127.692 620.695 124.542C623.962 121.276 625.595 116.668 625.595 110.718C625.595 107.102 624.312 104.127 621.745 101.794C619.179 99.3442 615.737 98.1193 611.421 98.1193Z"
+                        fill="#0053FF" />
                 </svg>
 
             </div>
@@ -2103,6 +2792,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
 
     </script>
+    <script src="Panel.js"></script>
 
     <script src="index.js"></script>
 </body>

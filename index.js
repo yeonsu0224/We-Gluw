@@ -1,4 +1,4 @@
-const video = document.getElementById("video");
+const introVideo = document.getElementById("video");
 const videoSection = document.getElementById("introVideo_wrap"); // 비디오를 감싸는 섹션 (또는 직접 video)
 
 const videoPlayback = 1000;
@@ -22,6 +22,10 @@ const functionCards = document.querySelectorAll(".function_list");
 
 
 
+
+
+
+
 // Lenis 인스턴스 생성
 const lenis = new window.Lenis({
   duration: 1.2,
@@ -37,6 +41,10 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+
+interaction_start_btn.addEventListener("click", ()=> {
+ 
+})
 
 
 
@@ -118,15 +126,15 @@ const observer = new IntersectionObserver((entries) => {
       }
     } else if (entry.target.id === "video" || entry.target.id === "introVideo_wrap") { // 비디오 섹션
       if (entry.isIntersecting) {
-        if (video.paused) {
-          video.play().catch(error => {
+        if (introVideo.paused) {
+          introVideo.play().catch(error => {
             console.error('Video play error:', error);
           });
           console.log('Video playing due to intersection.');
         }
       } else {
-        if (!video.paused) {
-          video.pause();
+        if (!introVideo.paused) {
+          introVideo.pause();
           console.log('Video paused due to leaving intersection.');
         }
       }

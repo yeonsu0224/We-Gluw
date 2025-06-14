@@ -57,7 +57,7 @@ body {
     flex-direction: column;
     width: 100%;
     height: auto;
-    background-color: #ECEBE9;
+    background-color: #ffffff;
     z-index: -1;
 }
 
@@ -398,17 +398,163 @@ a {
     left: 5vw;
 }
 
+
+
+
 #interaction_panel {
-    display: grid;
-    grid-template-columns: 2fr 0.9fr;
+    display: flex;
+    justify-content: start;
+    
     position: relative;
+    border: #000000 solid 2px;
+    border-radius: 50px;
     
     left: 5%;
     width: 90%;
-    height: 90vh;
+    height: 700px;
     list-style: none;
     gap: 58px;
     transition: all 1s ease-in-out;
+    /* overflow: hidden; */
+    
+    padding:2% 3%;
+}
+#interaction_panel::after{
+    content: "";
+    position: absolute;
+    width:30%;
+    left:35%;
+    top:100%;
+    border-top: #000000 2px solid;
+    height:150%;
+    background-color: #FFFFFF;
+    z-index:20;
+}
+
+.Interactionvideo_wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:48px;
+    overflow: hidden;
+    
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+}
+
+.panel_mockup_wrap.on{
+    opacity:1;
+}
+
+
+.panel_mockup_wrap{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+   width:100%;
+   height:100%;
+   
+    opacity:0;
+    
+}
+
+.panel_mockup_plasehilder{
+    position: relative;
+    width:1920px;
+    height:1080px;
+
+}
+
+.panel_mockup{
+    position: absolute;
+    aspect-ratio:9/16;
+    width:8.1%;
+     left:26.5%;
+    top:18.1%;
+}
+
+.Phone_pos{
+    display: none;
+    position: absolute;
+    bottom:-150%;
+    width:24%;
+    left:38%;
+    height:auto;
+    transition:  all 1s cubic-bezier(0, 0, 0.04, 0.93);
+}
+
+.Phone_pos.on{
+    bottom:3%;
+   
+}
+
+
+.interaction_cover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left: 0;
+    overflow: hidden;
+    border-radius:49px;
+    gap:10%;
+    width:100%;
+    height:100%;
+    transition: all 1s ease-in;
+}
+
+.interaction_cover.off{
+    opacity:0;
+}
+
+.cover_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index:30;
+    width:15%;
+    aspect-ratio: 279/122;
+
+}
+
+.interaction_start_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:60%;
+    border-radius:60px;
+    border: #ffffFF 1px solid;
+    background-color: #0053FF;
+    cursor: pointer;
+}
+
+.cover_box{
+    color:#ffffff;
+}
+
+.interaction_cover_bg{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color:black;
+    opacity:40%;
+}
+
+.interaction_cover img{
+    position: absolute;
+    left: 40%;
+    top:10%;
+    width:20%;
+    filter: blur(5px);
 }
 
 .panel {
@@ -416,10 +562,13 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 90vh;
+    
     overflow: hidden;
+    transition: all 1s ease-out;
+    z-index:2;
+   
 }
-
+/* 
 .Mission_bar {
     display: flex;
     align-items: center;
@@ -430,7 +579,7 @@ a {
     width: 300px;
     height: 65px;
     padding-right: 2%;
-    background-color: #ffffFF;
+   
     border: #000000 solid 2px;
     border-radius: 50px;
     font-weight: 600;
@@ -448,12 +597,85 @@ a {
     font-size: 22px;
     color: #ffffFF;
     margin-left: -10px;
+} */
+
+.panel.A{
+    width:100%;
 }
 
-.panel.A {
-    background-color: #ffffff;
-    border: solid #000000 2px;
+.panel.B {
+     border: #000000 solid 2px;
     border-radius: 30px;
+    aspect-ratio:805/631;
+    width:0%;
+    background-image: url("Img/Interaction_panel_bg_img.png");
+    background-position: center;
+    background-size:cover;
+    opacity:0;
+}
+
+.panel.B.on {
+    opacity:1;
+    width:100%;
+}
+
+.tutorialMessage.Phone.B{
+    right: 70%;
+  top: 53%;
+}
+
+
+.tutorialMessage.B{
+    top: 38%;
+}
+
+.tutorialMessage.cake{
+    left:25%;
+  top: 55%;
+  border-radius: 16px 16px 16px 0 ;
+}
+
+.tutorialMessage.on{
+    opacity: 1;
+    margin-bottom:0%;
+}
+
+
+.tutorialMessage {
+  position: absolute;
+  right: 40%;
+  top: 25%;
+  display: inline-flex; /* 내부 콘텐츠 크기에 맞춤 */
+  justify-content: center;
+  align-items: center;
+  padding: 22px 30px;
+  font-size: clamp(12px, 1vw, 23px);
+  text-align: center;
+  font-weight: 500;
+  color: #0053FF;
+  border: 1.5px solid #0053ff;
+  border-radius: 16px 16px 0 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 81, 255, 0.15);
+  width: fit-content; /* <== 요거 핵심 */
+  max-width: 90%; /* 너무 길어지는 것 방지 */
+  opacity: 0;
+  margin-bottom:-10%;
+  transition: all 0.6s ease-in-out;
+  z-index:100;
+}
+
+.tutorialMessage.Phone{
+    right: 70%;
+  top: 40%;
+}
+
+/* 강조된 텍스트 */
+.tutorialMessage strong {
+  font-weight: 700;
+  color: #0040e0;
 }
 
 .refrigerator_img {
@@ -2046,7 +2268,7 @@ a {
 
 .FM_arrow {
     position: absolute;
-    top: 38%;
+    top: 45%;
     left: 86%;
     width:20vw;
     z-index: 1;
@@ -2077,7 +2299,7 @@ a {
 
 .subheading.ID {
     position: absolute;
-    top: 5vh;
+    top: 11vh;
     left: 0;
     width: 100%;
     text-align: center;
@@ -2103,7 +2325,7 @@ a {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 60vh;
+    top: 48vh;
     width: 100%;
     aspect-ratio: 1286 / 800;
 }
@@ -2116,7 +2338,7 @@ a {
 }
 
 .ID_Lock_vento.A {
-    width: 35vw;
+    width: 45vw;
     height: 76vh;
     border: #000000 solid 2px;
     border-radius: 30px;
@@ -2406,7 +2628,7 @@ a {
     width: 65%;
 }
 
-.voice {
+.voice_web {
     display: flex;
     position: absolute;
     top: 10%;

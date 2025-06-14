@@ -45,12 +45,44 @@ input{
     z-index:30;
 }
 
+
+.cake_box{
+    position: absolute;
+    background-image: url("Img/cake.png");
+    background-position: center;
+    background-size:   cover;
+    width:10%;
+    left:20%;
+    bottom:10%;
+    aspect-ratio: 1/1;
+    transition: all 1s ease;
+    cursor: pointer;
+    pointer-events: none;
+    opacity:0;
+    z-index:5;
+
+
+}
+.cake_box.on{
+    opacity:1;
+    pointer-events: all;
+}
+
+
+.cake_box.active{
+    bottom:40%;
+    transform: scale(20%);
+    opacity:0;
+}
+
+
 #panel {
 
     /* display:none; */
     position: relative;
-    border: 2px black solid;
-    width:30%;
+
+    height: 88%;
+    margin-left:2.5vw;
     aspect-ratio:9/16;
     /* background-image: url("Img/panel/panel_1.png");
     background-position: center;
@@ -111,7 +143,7 @@ input{
     top:50%;
     left:25%;
     z-index:30;
-    border: #0053FF 2px dashed;
+    border: #0053FF 3px solid;
     opacity:1;
     animation: Breathe 1s infinite alternate;
     cursor: pointer;
@@ -130,21 +162,15 @@ input{
 
 
 
-/* 
-.panel_Introduction_button:hover{
-    opacity: 1;
-    transition: opacity 0.5s ease-in ;
-    border: 1px solid #0053FF;
-} */
 
 .panel_Introduction_div.A{
-    top:33.5%;
-    left:28%;
+    top:29.8%;
+    left:20%;
     
-    height:10%;
+    height:15.7%;
     width:auto;
     aspect-ratio: 5/5;
-    border-radius: 100%;
+   
 
 }
 
@@ -152,12 +178,11 @@ input{
 .keypad-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     position: relative;
     width:100%;
     height:40%;
-
     padding: 20px;
     border-radius: 15px;
    
@@ -171,12 +196,14 @@ input{
     justify-content: center;
     align-items: center;
     width:62%;
+    height:70%;
 }
 
 .keypad-button {
     width: 100%;
     aspect-ratio: 1/1;
-    background-color: #555; /* 버튼 배경색 */
+    background-color: rgba(164, 164, 164, 0.2); /* 버튼 배경색 */
+    border: #ffffff 1px solid;
     opacity:80%;
     border-radius: 50%; /* 원형 버튼 */
     display: flex;
@@ -192,20 +219,20 @@ input{
 }
 
 .keypad-button:hover {
-    background-color: #666; /* 호버 시 배경색 */
+    background-color: rgba(164, 164, 164, 0.5);
     opacity: 1;
     transition: opacity 0.2s ease;
 }
 
 .keypad-button .number {
     font-weight: 400;
-    font-size: 2.5em; /* 숫자 크기 */
+    font-size: 1.5em; /* 숫자 크기 */
     line-height: 1; /* 줄 높이 조정 */
 }
 
 .keypad-button .letters {
-    font-weight: 400;
-    font-size: 0.7em; /* 문자 크기 */
+    font-weight: 200;
+    font-size: 7px; /* 문자 크기 */
     margin-top: 2px; /* 숫자와 문자 사이 간격 */
     letter-spacing: 0.05em; /* 문자 간격 */
 }
@@ -223,10 +250,10 @@ input{
     align-items: center;
     justify-content: center;
     position: relative;
-    gap:8%;
+    
     width:100%;
     height:100%;
-    padding-bottom:15%;
+    padding-bottom:30%;
 }
 
 .keypad-container{
@@ -237,16 +264,16 @@ input{
     list-style: none;
   display: flex;
   justify-content: space-around;
-  gap:5%;
+  gap:2%;
   z-index:3;
   width:45%;
 }
 
 .password_circle{
-    width:15px;
-    height:15px;
+    width:7px;
+    height:7px;
     border-radius: 100%;
-    border: solid white 2px;
+    border: solid white 1px;
     transition: all 0.2s ease-in-out;
     
 }
@@ -327,17 +354,17 @@ input{
     z-index:5;
     display: flex; 
     justify-content: center;
-    gap: 20px; /* 버튼 사이의 간격 */
+    gap: 3%; /* 버튼 사이의 간격 */
     padding: 4.5%;
     width:100%;
     height:13%;
 }
 
 .action-button {
-    padding: 15px 40px; /* 상하 15px, 좌우 40px 패딩 */
+  
     border: none;
     border-radius: 5px; /* 모서리 둥글게 */
-    font-size: clamp(12px, 1.3vw, 18px);
+    font-size: clamp(12px, 1.3vw, 13px);
     font-weight: 400;
     width:100%;
     height:100%;
@@ -382,6 +409,7 @@ input{
 }
 
 .ui-box {
+    display: none;
     background-color: #D7D7D7; /*  박스 배경색 (약간 투명도를 주어 뒤 배경이 비치도록) */
     border-radius: 10px; /* 박스 모서리 둥글게 */
     /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 이 그림자는 main-container로 이동 */
@@ -431,7 +459,7 @@ input{
 
 .input-group.search-input {
     flex-grow: 1; /* 남은 공간을 차지 */
-    width:10%;
+    width:5%;
     display: flex;
     align-items: center;
     border: none; /* 이미지에는 별도 테두리가 보이지 않음 */
@@ -441,43 +469,62 @@ input{
     box-shadow: none; /* 그림자 제거 */
 }
 
+.input-group.search-input:hover{
+    border-bottom: 1px solid #0053FF; /* 하단 줄만 */
+}
+
 .input-group.search-input input[type="text"] {
     flex-grow: 1;
+    width:1%;
     border: none;
     outline: none;
-    font-size: 0.9em; /* 폰트 크기 약간 키움 */
+    font-size:13px; /* 폰트 크기 약간 키움 */
     padding: 0; /* 기본 input 패딩 제거 */
     background: transparent;
     color: #0053FF;
-    font-size:30px;
     font-weight: 600;
     /* placeholder 색상 조정 */
     &::placeholder {
-        color: #999;
+        color: #0053FF;
         font-weight: 300;
-        font-size:14px;
+        font-size:13px;
     }
+    
 }
 
 .icon-button {
     position: absolute;
-    right:5%;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0 5px; /* 좌우 패딩 조절 */
-    font-size: 1.5em; /* 아이콘 크기 약간 키움 */
-    color: #a0a0a0; /* 아이콘 색상 이미지에 가깝게 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: color 0.2s ease;
+  right: -40%;
+  top: 25%;
+  display: inline-flex; /* 내부 콘텐츠 크기에 맞춤 */
+  justify-content: center;
+ 
+  align-items: center;
+  padding: 18px 20px;
+  font-size: clamp(12px, 1vw, 23px);
+  text-align: center;
+  font-weight: 500;
+  color: #0053FF;
+  border: 1.5px solid #0053ff;
+  border-radius: 16px 16px  16px 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 81, 255, 0.15);
+  width: fit-content; /* <== 요거 핵심 */
+  max-width: 90%; /* 너무 길어지는 것 방지 */
+  margin-bottom:-10%;
+  transition: all 0.6s ease-in-out;
+  z-index:100;
+  cursor: pointer;
 }
 
 
-.icon-button.voice-icon{
-transform: scale(90%);
- right:10%;
+.icon-button.voice-icon svg{
+transform: scale(50%);
+/* margin: 5px; */
+ right:5%;
+ 
     z-index: 31;
 }
 
@@ -490,7 +537,7 @@ transform: scale(90%);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    font-size: 1em; /* 폰트 크기 조정 */
+    font-size: 0.5em; /* 폰트 크기 조정 */
     color: #333;
     padding-bottom: 10px; /* 각 섹션 하단에 약간의 여백 */
     border-bottom: 1px solid #eee; /* 구분선 추가 */
@@ -553,7 +600,7 @@ transform: scale(90%);
 }
 
 .dropdown-arrow-svg{
-    transform: scale(80%);
+    transform: scale(60%);
 }
 
 
@@ -571,8 +618,8 @@ transform: scale(90%);
     height:8%;
     right:5%;
     text-align: right; /* 날짜 우측 정렬 */
-    padding: 8px 12px; /* 패딩 조절 */
-    border-radius: 5px;
+  
+    border-radius: 2px;
     background-color: #BABABA; /* 배경색 약간 어둡게 */
     font-size: 1em;
     text-align: center;
@@ -659,10 +706,10 @@ input:checked + .slider:before {
 
 .cake_Name{
     position: absolute;
-    bottom:37.5%;
+    bottom:37%;
     color: #ffffff;
     z-index:10;
-   font-size: 1.7em;
+   font-size: 1em;
    font-weight:500;
    text-align: center;
    width:100%;
@@ -680,17 +727,18 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
 
-  gap:7%;
+  gap:5%;
   justify-content: center;
   font-family: sans-serif;
   color: white;
   background: transparent;
   z-index:5;
+  padding-bottom:10%;
 }
 
 .listening-text {
-    font-weight: 600;
-  font-size: 1.2rem;
+    font-weight: 300;
+  font-size: 0.8rem;
   margin-bottom: 2rem;
 }
 .circle svg{
@@ -712,7 +760,7 @@ input:checked + .slider:before {
 }
 
 .voice_end_svg{
-    width:40%;
+    width:50%;
     opacity: 0;
 }
 .circle.ok .voice_end_svg{
@@ -721,7 +769,8 @@ input:checked + .slider:before {
 
 
 .circle {
-  width: 40%;
+  max-width:120px;
+  height: auto;
   aspect-ratio: 1/1;
   background: linear-gradient(-45deg,   #577CA9, #2790FF);
   border-radius: 50%;
@@ -752,7 +801,7 @@ input:checked + .slider:before {
       0 0 0 20px rgba(58, 141, 222, 0.15);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow:
       0 0 0 50px rgba(58, 141, 222, 0.15),
       0 0 0 30px rgba(58, 141, 222, 0.1);
@@ -821,7 +870,7 @@ input:checked + .slider:before {
 
 .title-text {
   margin-top: 1rem;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: #7ec6ff;
   display: flex;
   align-items: center;
@@ -864,15 +913,16 @@ input:checked + .slider:before {
 
 
 #Phone{
-    display: none;
-    /* display: flex; */
+  
+    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    width:25%;
+    height: 100%;
     aspect-ratio: 468/971;
     transition: opacity 1s ease-in;
     opacity:0;
+    opacity: 1;
     
 
 }
@@ -928,6 +978,11 @@ overflow: hidden;
     z-index:13;
 }
 
+.phone_screen.WarehousingDetails {
+    /* z-index:20; */
+
+}
+
 .phone_screen.appOn{
     display: none;
      z-index:12;
@@ -959,6 +1014,11 @@ overflow: hidden;
     height:100%;
 }
 
+.phone_screen_img.food_list.fadeoff{
+    animation: fadeOut 0.5s 4s ease forwards;
+}
+
+
 .phone_screen_img.food_list{
     width:100%;
     height: auto;
@@ -968,6 +1028,11 @@ overflow: hidden;
 .phone_screen_img.Warehousing{
     z-index:11;
 }
+
+.phone_screen_img.Warehousing.fadeoff{
+    animation: fadeOut 0.5s 1s ease forwards;
+}
+
 .phone_screen_img.WarehousingDetails{
     z-index:11;
 }
@@ -1047,25 +1112,65 @@ cursor: pointer;
 }
 
 .GoWarehousing_btn {
-    width:10%;
-    height:10%;
-    background-color: #0053FF;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    aspect-ratio: 194.79/34.51;
+    background-color: #ffffff;
+    border: #0053FF 1px solid;
+    border-radius:30px;
+    color: #0053FF;
     position: absolute;
     z-index:11;
-    top:50%;
+    opacity:0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ 
     cursor: pointer;
+    animation: btnFaderight 0.5s 5s forwards;
+    font-size:clamp(10px, 1vw, 13px);
 }
+
+.GoWarehousing_btn::after{
+    content: "";
+    position: absolute;
+    right:-34%;
+    aspect-ratio: 1/1;
+    height:160%;
+    border-radius:100%;
+
+}
+
+@keyframes btnFaderight{
+    from{
+        top:7.5%;
+    right:22%;
+    opacity: 0;
+    }
+    to{
+        top:7.5%;
+    right:23%;
+    opacity: 1;
+    }
+}
+
 
 .Details_btn{
-     width:10%;
-    height:10%;
-    background-color: #0053FF;
+     width:78%;
+    height:11%;
+  
     position: absolute;
     z-index:12;
-    top:50%;
+    top:27%;
+    right:5%;
+    border-radius:12px;
     cursor: pointer;
 }
 
+
+.Details_btn:hover{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .back_btn{
     width:10%;
@@ -1078,14 +1183,43 @@ cursor: pointer;
 }
 
 .report_btn{
-     width:10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: end;
+    width:90%;
     height:10%;
-    background-color: #0053FF;
+
     position: absolute;
     z-index:12;
-    top:50%;
+    bottom:14%;
     cursor: pointer;
+    opacity: 0;
+    
 }
+.report_btn.fadein{
+    animation:btnFadeup 0.5s 1s forwards ease-in-out;
+}
+
+
+.report_btn img {
+    top:0;
+    position: absolute;
+    width:100%;
+}
+
+
+@keyframes btnFadeup{
+    from{
+    bottom:13%;
+    opacity: 0;
+    }
+    to{
+    bottom:14%;
+    opacity: 1;
+    }
+}
+
 
 
 /* 신고 해보자 성민씨 다신그러지마 알겠어? */
@@ -1164,7 +1298,7 @@ cursor: pointer;
 
 .report_question{
     width:100%;
-    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-size: clamp(1rem, 1.2vw, 2rem);
     font-weight: 600;
     padding-left:10%;
     line-height:140%;
@@ -1231,7 +1365,7 @@ cursor: pointer;
     padding: 15px 40px; /* 상하 15px, 좌우 40px 패딩 */
     border: none;
     border-radius: 15px; /* 모서리 둥글게 */
-    font-size: clamp(12px, 1.3vw, 23px);
+    font-size: clamp(12px, 1vw, 23px);
     font-weight: 400;
     width:90%;
     height:7%;
@@ -1358,7 +1492,7 @@ cursor: pointer;
 
 .report-input {
     width: 100%;
-    min-height: 300px; /* 최소 높이 */
+    min-height: 200px; /* 최소 높이 */
     padding: 10%; /* 내부 여백 */
     border: 2px solid #e0e0e0; /* 연한 테두리 */
     border-radius: 12px; /* 둥근 모서리 */
@@ -1408,7 +1542,7 @@ cursor: pointer;
 .confirm_box p{
     display: flex;
     align-items: center;
-    font-size:clamp(12px, 1vw, 15px) ;
+    font-size:clamp(12px, 1vw, 13px) ;
     font-weight: 500;
 }
 
@@ -1444,4 +1578,102 @@ cursor: pointer;
     position: relative;
     width:100%;
     height:100%;
+}
+
+
+/* CSS */
+
+
+
+.checklist {
+    right:10%;
+    top: 30%;
+    position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: sans-serif;
+  
+  width:20%;
+  height:35%;
+  opacity:0;
+  transition: all 1s ease;
+}
+
+.checklist.on{
+    opacity:1;
+}
+
+.Check_It_text{
+    font-size: 20px;
+    font-weight: 700;
+    color: #0053FF;
+}
+
+.checkItem {
+    width:100%;
+    height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  
+  transition: all 0.5s ease;
+}
+
+.checkItem .number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 24px;
+  margin-right: 10px;
+}
+
+.checkItem_icon {
+opacity: 0; 
+ 
+}
+
+.checkItem.done .checkItem_icon{
+    opacity:1;
+}
+
+.checkItemtext{
+    width:100%;
+}
+
+.checkItem.pending {
+  color: #000;
+  border-color: #ccc;
+}
+
+.checkItem.active {
+  color: #0053ff;
+  border-color: #0053ff;
+  background: #f0f7ff;
+}
+
+.checkItem.done {
+  color: #000;
+  border-color: #000000;
+  background: #fff;
+}
+
+.checkItem.done .icon::after {
+  content: "✔";
+  color: #0053ff;
+}
+
+.checkItem.disabled {
+  color: #aaa;
+  border-color: #ccc;
+  background: #f5f5f5;
 }

@@ -1,3 +1,77 @@
+//웹 인터랙션 섹션 요소들
+window.interaction_panel = document.getElementById("interaction_panel")
+window.interaction_start_btn = document.querySelector(".interaction_start_btn")
+window.web_interaction_panel  =  document.querySelector(".panel.B")
+window.panel_mockup = document.querySelector(".panel_mockup_wrap")
+window.panel_mockup_img = document.querySelector(".panel_mockup")
+
+let panel_mockup_num =0
+
+
+//목업 화면들 경로 배열
+const panel_mockupArr  =[
+    "",
+    "Img/panel/panel_2.png",
+    "Img/panel/panel_3_sub.png",
+    "",
+    "Img/panel/panel_4.png",
+    "Img/panel/panel_6.png",
+    "Img/panel/panel_7.png",
+    "Img/panel/panel_7.png",
+    "Img/panel/panel_7.png",
+    "Img/panel/panel_7.png"
+]
+
+const cake = document.querySelector(".cake_box")
+
+const interaction_cover = document.querySelector(".interaction_cover")
+
+//튜토리얼 메세지 불러오기 , 대사 배열
+
+window.tutorialMessage_box = document.querySelector(".tutorialMessage.A")
+window.tutorialMessage_box_sub = document.querySelector(".tutorialMessage.B")
+window.tutorialMessage_cake = document.querySelector(".tutorialMessage.cake")
+
+let tutorialNum =0
+let tutorialNumSub =0
+
+window.tutorialMessageArr =[
+"냉장고에 로그인해  <strong>잠금을 해제</strong>하세요.",
+
+"케이크를 냉장고에 넣어주세요",
+"입고가 감지되었어요!",
+"자동으로 음식 이름을 추측, 입력합니다",
+"내 음식 리스트에 저장이 완료되었어요!",
+"그럼, 다시 케이크를 먹은 범인을 찾아볼까요?",
+"누군가 당신의 케이크를 꺼냈어요!",
+"앱을 처음 키면 당신의 음식 리스트를 볼 수 있어요!",
+"내 음식을 누가 꺼냈는지 입출고 내역을 확인 해 볼까요?",
+"가장 최근 출고 내역을 볼까요?",
+"범인을 찾았네요.. [최성민]님 이였군요",
+"직접 말을 걸어볼 수도 있지만, 이번엔<br> 냉장고 관리자에게 경고를 부탁할까요?",
+"좋아요, 문항에 따라 선택지를 골라주세요",
+"먼저 사용자 신고,",
+"사용자 중 <strong>[최성민]</strong> 님 선택",
+"도난/분실을 선택",
+"신고 내용을 자유롭게 적어 주세요",
+"거의 다 왔어요!",
+"축하드려요!<br>위글루의 가장 기본적인 사용법을 체험 해 보셨습니다!"
+
+]
+
+window.tutorialSubMessageArr = [
+    "",
+    "비밀번호, Face ID, 휴대폰 태그 등,<br> <strong>다양한 방식</strong>으로 로그인이 가능합니다!"
+    ,"자동으로 사진이 등록됩니다,<br> 직접 선택 해 볼까요?",
+    "음성이나 터치로 직접 설정 하실 수도 있어요!",
+    "이제 위글루가 당신의 음식을 지켜봅니다.",
+    "미리 등록 해 둔 음식이 다른 사용자에게 출고되면,<br> 사용자님께 알람이 전송돼요.",
+    
+
+]
+
+
+
 
 
 let panel_section = document.querySelector(".panel_wrap")
@@ -19,6 +93,7 @@ const listening_text = document.querySelector(".listening-text")
 const listening_typing = document.querySelector(".typing")
 const button_container_voice = document.querySelector(".button-container.voice")
 const voice_img = document.querySelector(".panel_img_voice")
+const voice_done_btn = document.querySelector(".action-button.voice")
 
 
 //케이크 이름 바꿔 낄 변수 돔 배열로 불러옴
@@ -46,10 +121,23 @@ let search_input = document.querySelector(".input-group.search-input input")
 
 
 
+//체크리스트
+let checklist = document.querySelector(".checklist")
+
+function setStep(index, status) {
+  const items = document.querySelectorAll('.checkItem');
+  items.forEach((item, i) => {
+    item.classList.remove('pending', 'active', 'done', 'disabled');
+    if (i < index) item.classList.add('done');
+    else if (i === index) item.classList.add(status || 'active');
+    else item.classList.add('disabled');
+  });
+}
+
 
 //---------------------휴대폰 앱 인터랙션 부분
 
-const Phone_wrap = document.getElementById("Phone")
+const Phone_wrap = document.querySelector(".Phone_pos")
 
 const look_screen = document.querySelector(".phone_screen.look")
 const alert_box = document.querySelector(".alert_img")
@@ -57,10 +145,18 @@ const app_on_screen = document.querySelector(".phone_screen.appOn")
 
 const GoWarehousing_btn = document.querySelector(".GoWarehousing_btn")
 const food_list_screen = document.querySelector(".phone_screen.food_list")
+
+const phone_screen_img_old = document.querySelector(".phone_screen_img.food_list.old")
+
+
 const Warehousing_screen = document.querySelector(".phone_screen.Warehousing")
 const WarehousingDetails_screen = document.querySelector(".phone_screen.WarehousingDetails")
+const phone_screen_img_Warehousing_old = document.querySelector(".phone_screen_img.Warehousing.old")
+
+
+
 const Details_btn = document.querySelector(".Details_btn")
-const back_btn = document.querySelector(".back_btn")
+// const back_btn = document.querySelector(".back_btn")
 
 
 
@@ -71,9 +167,10 @@ let Progress = 20
 const nav_food_list = document.querySelector(".nav-item.food_list")
 const nav_mypage = document.querySelector(".nav-item.mypage")
 
-const myPage_screen = document.querySelector(".phone_screen.myPage ")
-
+// const myPage_screen = document.querySelector(".phone_screen.myPage ")
 const report_btn = document.querySelector(".report_btn")
+
+
 const report_screen = document.querySelector(".phone_screen.report")
 
 const report_question = document.querySelector(".report_question")
@@ -103,62 +200,196 @@ const questionsArray = ["",`사용자 신고를 선택하셨어요.<br>누구를
 
 const alphabetArray = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
+//영상 재생 트리거
+ const video = document.querySelector('.Interactionvideo');
+  let stopTime = 0;
+  let timeUpdateHandler = null;
+
+  // 특정 구간만 재생하는 함수
+  function playVideoSegment(startTime, endTime) {
+    if (!video) {
+      console.error('비디오 요소를 찾을 수 없습니다.');
+      return;
+    }
+
+    if (startTime >= endTime) {
+      console.error('시작 시간은 끝 시간보다 작아야 합니다.');
+      return;
+    }
+
+    // 기존 이벤트 제거 (중복 방지)
+    if (timeUpdateHandler) {
+      video.removeEventListener('timeupdate', timeUpdateHandler);
+      timeUpdateHandler = null;
+    }
+
+    stopTime = endTime;
+
+    // 멈출 시간에 도달하면 정지
+    timeUpdateHandler = () => {
+      if (video.currentTime >= stopTime - 0.03) {
+        video.pause();
+        video.currentTime = stopTime;
+        video.removeEventListener('timeupdate', timeUpdateHandler);
+        timeUpdateHandler = null;
+      }
+    };
+
+    video.addEventListener('timeupdate', timeUpdateHandler);
+
+    // currentTime 설정 후 재생은 seeked 이벤트 이후
+    video.pause();
+    video.currentTime = startTime;
+
+    video.addEventListener('seeked', function onSeeked() {
+      video.removeEventListener('seeked', onSeeked); // 1회만 실행
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn('비디오 재생 실패:', err);
+        });
+      }
+    });
+  }
 
 
+
+
+function scrollToPhoneNav(lenis, offset = 50) {
+  const target = document.getElementById('Phone_nav');
+  if (!target || !lenis) return;
+
+  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+  lenis.scrollTo(top, {
+    offset: 0,
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 부드러운 ease-out
+  });
+}
+
+
+function nextTutorialMessage(){
+    tutorialMessage_box.classList.remove("on")
+    tutorialNum ++;
+    setTimeout(()=>{
+        tutorialMessage_box.innerHTML = tutorialMessageArr[tutorialNum]
+        tutorialMessage_box.classList.add("on")
+    }, 600)
+   
+}
+
+function nextTutorialMessage_sub(){
+    
+        tutorialMessage_box_sub.classList.remove("on")
+    tutorialNumSub ++;
+        
+   
+    
+    setTimeout(()=>{
+        tutorialMessage_box_sub.innerHTML = tutorialSubMessageArr[tutorialNumSub]
+        tutorialMessage_box_sub.classList.add("on")
+    }, 700)
+
+    setTimeout(()=>{
+        tutorialMessage_box_sub.classList.remove("on")
+    }, 4000)
+   
+}
+
+
+
+//인터랙션 시작
+interaction_start_btn.addEventListener("click", ()=> {
+    console.log("인터랙션 비디오 재생")
+    playVideoSegment(1, 5)
+     interaction_cover.classList.add("off")
+  setTimeout(()=>{
+    interaction_cover.style.display = "none"
+    web_interaction_panel.classList.add("on")
+    
+  }, 1000)
+
+  setTimeout(()=>{
+    tutorialMessage_box.classList.add("on")
+  }, 2000)
+})
 
 
 
 
 // 휴대폰 조작 인터랙션 구현
 alert_box.addEventListener("click", () => {
-    if(!go_mayPage){
+    
         look_screen.classList.add("sliderUp")
     app_on_screen.style.display = "block"
+    nextTutorialMessage()
+    setStep(1);
 
     setTimeout(()=>{
         app_on_screen.style.display = "none"
+        phone_screen_img_old.classList.add("fadeoff")
+        nextTutorialMessage()
+
     },3000)
-    }
+  
     
 })
 
 GoWarehousing_btn.addEventListener("click", ()=>{
-    if(!go_mayPage){
-    console.log("입출고 목록으로 갈래요")
+   
+    nextTutorialMessage()
     food_list_screen.classList.add("slideleft")
     Warehousing_screen.classList.remove("rightWaiting")
-    }
+    
+    phone_screen_img_Warehousing_old.classList.add("fadeoff")
+    
+  
 })
 Details_btn.addEventListener("click", ()=> {
-    if(!go_mayPage){
+    nextTutorialMessage()
      Warehousing_screen.classList.add("slideleft")
      WarehousingDetails_screen.classList.remove("rightWaiting")
-    }
+     setStep(2);
+     report_btn.classList.add("fadein")
+
+     setTimeout(()=>{
+        nextTutorialMessage()
+     }, 2000)
+    
+    
 })
 
-back_btn.addEventListener("click", ()=>{
-    WarehousingDetails_screen.classList.add("rightWaiting")
-    food_list_screen.classList.remove("slideleft")
-    go_mayPage = true
-})
+// back_btn.addEventListener("click", ()=>{
+//     WarehousingDetails_screen.classList.add("rightWaiting")
+//     food_list_screen.classList.remove("slideleft")
+    
+// })
 
-nav_mypage.addEventListener("click", ()=> {
-    if(go_mayPage){
-        nav_food_list.classList.remove("active")
-        nav_mypage.classList.add("active")
-        food_list_screen.classList.add("slideleft")
-        myPage_screen.classList.remove("rightWaiting")
-    }
-})
+// nav_mypage.addEventListener("click", ()=> {
+//     if(go_mayPage){
+//         nav_food_list.classList.remove("active")
+//         nav_mypage.classList.add("active")
+//         food_list_screen.classList.add("slideleft")
+//         myPage_screen.classList.remove("rightWaiting")
+//     }
+// })
 
 report_btn.addEventListener("click", ()=> {
-     myPage_screen.classList.add("slideleft")
+    WarehousingDetails_screen.classList.add("slideleft")
+     
      report_screen.classList.remove("rightWaiting")
+     nextTutorialMessage()
+
+     setTimeout(()=>{
+        nextTutorialMessage()
+     }, 2000)
 })
 
 help_boxs.forEach(help_box=>{
  
     help_box.addEventListener("click", ()=>{
+        
         
         nextChoice_btn.classList.add("active")
         help_boxs.forEach(box => {
@@ -234,11 +465,19 @@ confirm_box.addEventListener("click", ()=> {
 
 
 
+let ChoiceCount =0
+
 nextChoice_btn.addEventListener("click", () => {
   // Select_report가 true일 때만 작동
   if (Select_report) {
     // 다시 false로 바꿔서 반복 클릭 방지
     Select_report = false;
+    nextTutorialMessage()
+    ChoiceCount++;
+    
+    if(ChoiceCount === 5){
+        setStep(3);
+    }
     
     Progress+=20
     Progress_line.style.width = `${Progress}%`
@@ -280,8 +519,11 @@ nextChoice_btn.addEventListener("click", () => {
 
 //음성인식으로 넘어가기
 
-voice_icon.addEventListener("click", 
-    nextScreen
+voice_icon.addEventListener("click", ()=>{
+    nextScreen()
+    panel_mockup_img.src = "Img/panel/panel_voice_sub1.png"
+}
+    
 )
 
 
@@ -290,11 +532,15 @@ voice_icon.addEventListener("click",
 panelIntroductionButton.addEventListener("click", ()=> {
      if(imgBtnstate){
         nextScreen()
+        panel_mockup.classList.add("on")
+        
         
     }
 
     if(targetScreenIndex >= 2){
         panelIntroductionButton.style.display = "none"
+        nextTutorialMessage_sub()
+        
     }
 }
 );
@@ -315,17 +561,20 @@ search_input.addEventListener('input', () => {
     if (search_input.value.trim().length > 0) {
 
         
-        Selected = true; // 입력값이 있으면 true로 설정
+         // 입력값이 있으면 true로 설정
         console.log("입력값이 있습니다:", Selected);
         cake_Name_now = inputValue
+        Selected = true;
 
         
     } else {
-        Selected = false; // 입력값이 없으면 (모두 지워졌을 때) false로 설정
+       Selected = true; // 입력값이 없으면 (모두 지워졌을 때) false로 설정
         console.log("입력값이 없습니다:", Selected);
+        cake_Name_now = "딸기케이크"
     }
 
     cakeNaming()
+    
     
       
 });
@@ -336,6 +585,7 @@ listening_circle.addEventListener("click", ()=> {
   listening_circle.classList.add("on")
   listening_text.innerText = "듣고있어요."
   listening_typing.classList.add('on')
+  panel_mockup_img.src = "Img/panel/panel_voice_sub2.png"
   cake_Name_now = "딸기케이크"
   cakeNaming()
     console.log("케이크 이름:", cake_Name_now);
@@ -347,13 +597,17 @@ listening_circle.addEventListener("click", ()=> {
     Selected = true
     button_container_voice.style.display = "flex"
     voice_img.src = "Img/panel/panel_bg_dark.png"
+    panel_mockup_img.src = "Img/panel/panel_voice_sub3.png"
 
   },5000)
 })
 
 
-// 테스트를 위해 현재 hasInputValue 값 출력 (초기 상태)
-console.log("초기 hasInputValue:", Selected);
+voice_done_btn.addEventListener("click", ()=> {
+    panel_mockup_img.src = "Img/panel/panel_7.png"
+})
+
+
 
 
 
@@ -370,7 +624,13 @@ selectButtons.forEach(selectButton => {
     if(Selected){
         console.log("선택 완료 후 버튼 누름")
         nextScreen()
+        nextTutorialMessage()
         Selected = false
+
+        if(tutorialNumSub ==2 || tutorialNumSub ==3 ){
+            Selected = true;
+            nextTutorialMessage_sub()
+        }
 
         
     }
@@ -378,47 +638,89 @@ selectButtons.forEach(selectButton => {
 } )
 })
 
+
+
 panelEnd_button.addEventListener("click", ()=> {
     panel_section.classList.add("off")
+    nextTutorialMessage()
+    web_interaction_panel.classList.remove("on")
+    tutorialMessage_box.classList.add("Phone")
+    tutorialMessage_box_sub.classList.add("Phone")
+
     setTimeout(()=>{
         panel_section.style.display = "none"
+        
+        
     }, 1000)
+   
 
 //휴대폰 시퀀스 시작
-    Phone_wrap.style.display = "flex"
+    Phone_wrap.style.display = "block"
+    panel_mockup.classList.remove("on")
+    playVideoSegment(24, 26.5)
+    setTimeout(()=>{
+        Phone_wrap.classList.add("on")
+        checklist.classList.add("on")
+    },3000)
+
+    setTimeout(()=>{
+         scrollToPhoneNav(lenis, 80);
+    }, 4000)
+
 setTimeout(()=>{
-        Phone_wrap.style.opacity = "1"
-    }, 1000)
+        
+        nextTutorialMessage()
+        nextTutorialMessage_sub()
+    }, 5000)
+
 
 })
-
 
 
 keypadButton.forEach(keypadBtn => {
-keypadBtn.addEventListener('click', ()=> {
+  keypadBtn.addEventListener('click', () => {
     
-    if(passwordClicked == 5){
-        setTimeout(()=>{
-            nextScreen()
-            passwordWrap.style.display = "none"
-        }, 1000)
-        passwordLength[passwordClicked].classList.add('clicked')
-        
-        
-    }else{
-        passwordLength[passwordClicked].classList.add('clicked')
-    passwordClicked++;
+    if (passwordClicked >= 6) return; // ✅ 6번째 이상 클릭 무시
+
+    passwordLength[passwordClicked].classList.add('clicked');
+
+    if (passwordClicked === 5) {
+      setTimeout(() => {
+        nextScreen();
+        nextTutorialMessage();
+        console.log("인터랙션 비디오 재생")
+        playVideoSegment(6, 12)
+        passwordWrap.style.display = "none";
+        cake.classList.add("on")
+        tutorialMessage_cake.classList.add("on")
+     
+      }, 10);
     }
+
+    passwordClicked++; // ✅ 어디서든 클릭 카운트를 증가시켜야 함
+
+  });
+});
+
+
+cake.addEventListener("click", ()=> {
+    cake.classList.add("active")
+    tutorialMessage_cake.classList.remove("on")
+    playVideoSegment(15, 20)
     
-
-
+    nextTutorialMessage()
+    nextTutorialMessage_sub()
+    nextScreen();
 })
-})
+
 
 cake_photo_Select.addEventListener("click",() => {
     photo_Select_Check.classList.add("Checked")
     Selected = true;
+    
 })
+
+
 
 
 
@@ -428,17 +730,25 @@ function nextScreen(){
     panelScreens.forEach(screen => {
         screen.classList.remove("on");
     });
+    
 
     // 인덱스 증가 (다음 이미지로)
     targetScreenIndex++;
+    panel_mockup_num++;
+    console.log(targetScreenIndex)
 
     // 인덱스가 마지막이면 다시 0으로
-    if (targetScreenIndex >= panelScreens.length) {
-        targetScreenIndex = 0;
-    }
+    // if (targetScreenIndex >= panelScreens.length) {
+    //     targetScreenIndex = 0;
+    // }
+    //냉장고 영상에 덮어씌울 거
+    panel_mockup_img.src = panel_mockupArr[panel_mockup_num]
+
 
     panelIntroductionButton.classList.remove("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
     // 해당 인덱스에 on 클래스 추가
     panelScreens[targetScreenIndex].classList.add("on");
     panelIntroductionButton.classList.add( `${alphabetArray[targetScreenIndex]}`)
 }
+
+
