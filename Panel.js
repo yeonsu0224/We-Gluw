@@ -2,8 +2,10 @@
 window.interaction_panel = document.getElementById("interaction_panel")
 window.interaction_start_btn = document.querySelector(".interaction_start_btn")
 window.web_interaction_panel  =  document.querySelector(".panel.B")
-window.panel_mockup = document.querySelector(".panel_mockup_wrap")
-window.panel_mockup_img = document.querySelector(".panel_mockup")
+const Interactionvideo_wrap = document.querySelector(".Interactionvideo_wrap")
+
+// window.panel_mockup = document.querySelector(".panel_mockup_wrap")
+// window.panel_mockup_img = document.querySelector(".panel_mockup")
 
 let panel_mockup_num =0
 
@@ -302,7 +304,8 @@ function nextTutorialMessage_sub(){
 //인터랙션 시작
 interaction_start_btn.addEventListener("click", ()=> {
     console.log("인터랙션 비디오 재생")
-    playVideoSegment(1, 5)
+    Interactionvideo_wrap.style.filter = "none"
+    playVideoSegment(1, 3)
      interaction_cover.classList.add("off")
   setTimeout(()=>{
     interaction_cover.style.display = "none"
@@ -521,7 +524,8 @@ nextChoice_btn.addEventListener("click", () => {
 
 voice_icon.addEventListener("click", ()=>{
     nextScreen()
-    panel_mockup_img.src = "Img/panel/panel_voice_sub1.png"
+    // panel_mockup_img.src = "Img/panel/panel_voice_sub1.png"
+    playVideoSegment(22.5, 22.6)
 }
     
 )
@@ -532,7 +536,9 @@ voice_icon.addEventListener("click", ()=>{
 panelIntroductionButton.addEventListener("click", ()=> {
      if(imgBtnstate){
         nextScreen()
-        panel_mockup.classList.add("on")
+        // panel_mockup.classList.add("on")
+        
+        playVideoSegment(3, 4)
         
         
     }
@@ -540,6 +546,9 @@ panelIntroductionButton.addEventListener("click", ()=> {
     if(targetScreenIndex >= 2){
         panelIntroductionButton.style.display = "none"
         nextTutorialMessage_sub()
+        playVideoSegment(5, 5.5 )
+        
+        
         
     }
 }
@@ -582,10 +591,12 @@ search_input.addEventListener('input', () => {
 
 //음성 인식 인터랙션
 listening_circle.addEventListener("click", ()=> {
+
+  playVideoSegment(22.5, 26)
   listening_circle.classList.add("on")
   listening_text.innerText = "듣고있어요."
   listening_typing.classList.add('on')
-  panel_mockup_img.src = "Img/panel/panel_voice_sub2.png"
+  // panel_mockup_img.src = "Img/panel/panel_voice_sub2.png"
   cake_Name_now = "딸기케이크"
   cakeNaming()
     console.log("케이크 이름:", cake_Name_now);
@@ -597,14 +608,14 @@ listening_circle.addEventListener("click", ()=> {
     Selected = true
     button_container_voice.style.display = "flex"
     voice_img.src = "Img/panel/panel_bg_dark.png"
-    panel_mockup_img.src = "Img/panel/panel_voice_sub3.png"
+    // panel_mockup_img.src = "Img/panel/panel_voice_sub3.png"
 
   },5000)
 })
 
 
 voice_done_btn.addEventListener("click", ()=> {
-    panel_mockup_img.src = "Img/panel/panel_7.png"
+    // panel_mockup_img.src = "Img/panel/panel_7.png"
 })
 
 
@@ -626,10 +637,16 @@ selectButtons.forEach(selectButton => {
         nextScreen()
         nextTutorialMessage()
         Selected = false
+        playVideoSegment(21, 21.5)
 
-        if(tutorialNumSub ==2 || tutorialNumSub ==3 ){
+        if(tutorialNumSub ==2){
             Selected = true;
             nextTutorialMessage_sub()
+            
+        }else if(tutorialNumSub ==3){
+          Selected = true;
+            nextTutorialMessage_sub()
+          playVideoSegment(27,27.5)
         }
 
         
@@ -656,8 +673,8 @@ panelEnd_button.addEventListener("click", ()=> {
 
 //휴대폰 시퀀스 시작
     Phone_wrap.style.display = "block"
-    panel_mockup.classList.remove("on")
-    playVideoSegment(24, 26.5)
+    // panel_mockup.classList.remove("on")
+    playVideoSegment(27, 29.5)
     setTimeout(()=>{
         Phone_wrap.classList.add("on")
         checklist.classList.add("on")
@@ -717,6 +734,7 @@ cake.addEventListener("click", ()=> {
 cake_photo_Select.addEventListener("click",() => {
     photo_Select_Check.classList.add("Checked")
     Selected = true;
+    playVideoSegment(19,20)
     
 })
 
@@ -742,7 +760,7 @@ function nextScreen(){
     //     targetScreenIndex = 0;
     // }
     //냉장고 영상에 덮어씌울 거
-    panel_mockup_img.src = panel_mockupArr[panel_mockup_num]
+    // panel_mockup_img.src = panel_mockupArr[panel_mockup_num]
 
 
     panelIntroductionButton.classList.remove("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
