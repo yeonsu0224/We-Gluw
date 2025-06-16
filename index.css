@@ -2498,8 +2498,10 @@ a {
 .moderation_Mockup_screen {
     position: absolute;
     width: 600%;
+    left:0px;
     /* height: 100%; */
     z-index: 1;
+    transition: all 1s ease-out;
 }
 
 .moderation_Mockups {
@@ -2508,6 +2510,7 @@ a {
     left:calc(50% + 225px);
     width: 110%;
     z-index: 0;
+    transition: all 1s ease-out;
 }
 
 

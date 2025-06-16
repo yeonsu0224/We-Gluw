@@ -379,3 +379,32 @@ setupScrollSnapObserver(ScanIssue, 0.3, -50, 0);
 setupScrollSnapObserver(Food_sharing, 0.3, -50, 0);
 setupScrollSnapObserver(Look_system, 0.3, -50, 0);
 setupScrollSnapObserver(last_wegluePhoto, 0.3, -50, 0);
+
+
+
+const moderation_Mockups_bg = document.querySelector('.moderation_Mockups')
+const moderation_Mockup_screen = document.querySelector('.moderation_Mockup_screen')
+
+
+let moderation_screen_pos = 0
+let moderation_bg_pos = 225
+
+
+setInterval(()=> {
+    // if(moderation_screen_pos){
+
+   if(moderation_screen_pos < 1660){
+    moderation_bg_pos -=312
+    moderation_screen_pos += 332
+   }else{
+    moderation_screen_pos = 0
+    moderation_bg_pos = 225
+   }
+
+    
+    moderation_Mockup_screen.style.left = `-${moderation_screen_pos}px`
+    
+    moderation_Mockups_bg.style.left = `calc(50% + ${moderation_bg_pos}px)`
+    //  }
+
+}, 3000)
