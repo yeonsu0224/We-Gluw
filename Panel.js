@@ -3,6 +3,9 @@ window.interaction_panel = document.getElementById("interaction_panel")
 window.interaction_start_btn = document.querySelector(".interaction_start_btn")
 window.web_interaction_panel  =  document.querySelector(".panel.B")
 const Interactionvideo_wrap = document.querySelector(".Interactionvideo_wrap")
+const click_circle =document.querySelector(".click_circle")
+const click_icon = document.querySelector(".click_icon")
+
 
 // window.panel_mockup = document.querySelector(".panel_mockup_wrap")
 // window.panel_mockup_img = document.querySelector(".panel_mockup")
@@ -539,6 +542,8 @@ panelIntroductionButton.addEventListener("click", ()=> {
         // panel_mockup.classList.add("on")
         
         playVideoSegment(3, 4)
+        click_circle.style.display = "none"
+        click_icon.style.display = "none"
         
         
     }

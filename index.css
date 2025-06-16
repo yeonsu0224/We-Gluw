@@ -2793,6 +2793,7 @@ a {
 .sharing_arrow.B {
     top: 56.5%;
     right: 80%;
+    z-index: 1;
 }
 
 .sharing_Mockup {
@@ -2836,6 +2837,7 @@ a {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index:3;
     width: 30%;
     height: auto;
     padding: 1.5vw;
