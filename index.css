@@ -1455,12 +1455,13 @@ a {
 }
 
 .designSystem_grid li {
-    padding: 3vw;
+    padding: 1.5vw;
     border: #000000 solid 2px;
     border-radius: 30px;
     font-size: clamp(19px, 1.25vw, 29px);
-    font-weight: 600;
+    font-weight: 400;
     overflow: hidden;
+
 }
 
 .designSystem_grid li:nth-child(1) {
@@ -1558,8 +1559,8 @@ a {
 
 .Symbol p {
     position: absolute;
-    top: 3vw;
-    left: 3vw;
+    top: 1.5vw;
+    left: 1.5vw;
 }
 
 .designSystem_grid li:nth-child(2) {
@@ -1606,8 +1607,8 @@ a {
 
 .Icons p {
     position: absolute;
-    top: 3vw;
-    left: 3vw;
+    top: 1.5vw;
+    left: 1.5vw;
 }
 
 @keyframes icons_rolling {
@@ -2481,7 +2482,7 @@ a {
     align-items: center;
     position: relative;
     width: 97%;
-    height: 90%;
+    height: 99%;
     overflow: hidden;
 }
 
@@ -2497,17 +2498,26 @@ a {
 
 .moderation_Mockup_screen {
     position: absolute;
-    width: 600%;
-    left:0px;
+    height:101%;
+    left:0;
+    
     /* height: 100%; */
     z-index: 1;
     transition: all 1s ease-out;
 }
 
+.moderation_Mockup_screen.standby{
+    left:100%;
+}
+
+.moderation_Mockup_screen.outLeft {
+    left:-100%;
+}
+
 .moderation_Mockups {
     position: absolute;
     top: 5vh;
-    left:calc(50% + 225px);
+    left:0vw;
     width: 110%;
     z-index: 0;
     transition: all 1s ease-out;

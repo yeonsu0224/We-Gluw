@@ -979,10 +979,7 @@ overflow: hidden;
     z-index:13;
 }
 
-.phone_screen.WarehousingDetails {
-    /* z-index:20; */
 
-}
 
 .phone_screen.appOn{
     display: none;

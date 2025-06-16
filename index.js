@@ -1,4 +1,7 @@
 const introVideo = document.getElementById("video");
+
+introVideo.playbackRate = 1.5;
+
 const videoSection = document.getElementById("introVideo_wrap");
 
 const videoPlayback = 1000;
@@ -311,7 +314,7 @@ introVideo.addEventListener('seeked', () => {
 Go_getCake_btn.addEventListener("click", ()=>{
   customScrollTo({
         target: '#interaction',
-        offset: -30,
+        offset: 30,
         duration: 1.5
     });
 
@@ -367,6 +370,7 @@ const ScanIssue = document.getElementById('ScanIssue')
 const Food_sharing = document.getElementById('Food_sharing')
 const Look_system = document.getElementById('Look_system')
 const last_wegluePhoto = document.getElementById('last_wegluePhoto')
+const interaction_title = document.getElementById('interaction_title')
 
 
 
@@ -379,32 +383,35 @@ setupScrollSnapObserver(ScanIssue, 0.3, -50, 0);
 setupScrollSnapObserver(Food_sharing, 0.3, -50, 0);
 setupScrollSnapObserver(Look_system, 0.3, -50, 0);
 setupScrollSnapObserver(last_wegluePhoto, 0.3, -50, 0);
+setupScrollSnapObserver(interaction_title , 1, 0, 0);
+
 
 
 
 const moderation_Mockups_bg = document.querySelector('.moderation_Mockups')
-const moderation_Mockup_screen = document.querySelector('.moderation_Mockup_screen')
+const moderation_Mockup_screens = document.querySelectorAll('.moderation_Mockup_screen')
+const Mockup_screen = document.querySelector('.Iphone_MockUp')
 
+let Mockup_screen_num = 0
+
+Mockup_screen.addEventListener("click", () => {
+
+    if(Mockup_screen_num == 5){
+        Mockup_screen_num = 0
+    }
+
+    
+    moderation_Mockup_screens[Mockup_screen_num].classList.add('outLeft')
+
+    Mockup_screen_num++;
+
+    moderation_Mockup_screens[Mockup_screen_num].classList.remove("standby")
+
+
+
+})
 
 let moderation_screen_pos = 0
 let moderation_bg_pos = 225
 
 
-setInterval(()=> {
-    // if(moderation_screen_pos){
-
-   if(moderation_screen_pos < 1660){
-    moderation_bg_pos -=312
-    moderation_screen_pos += 332
-   }else{
-    moderation_screen_pos = 0
-    moderation_bg_pos = 225
-   }
-
-    
-    moderation_Mockup_screen.style.left = `-${moderation_screen_pos}px`
-    
-    moderation_Mockups_bg.style.left = `calc(50% + ${moderation_bg_pos}px)`
-    //  }
-
-}, 3000)
