@@ -107,7 +107,7 @@ a {
 
 .description.white {
     color: #ffffff;
-    font-weight: 300;
+    font-weight:500;
     left: 0%;
 }
 
@@ -1308,7 +1308,9 @@ a {
 }
 
 .function_disc {
-    font-size: clamp(17px, 1vw, 22px);
+    font-size: clamp(17px, 1.2vw, 22px);
+    font-weight: 500;
+    line-height: 150%;
    
 }
 
@@ -2481,15 +2483,20 @@ a {
     display: flex;
     align-items: center;
     position: relative;
-    width: 97%;
-    height: 99%;
+    width: 91%;
+    height: 97%;
     overflow: hidden;
+    border-radius:30px;
+}
+
+.moderation_Mockup_screen.first{
+    z-index:3;
 }
 
 .Iphone_MockUp {
     position: relative;
     height: 100%;
-    z-index: 2;
+    z-index: 5;
     cursor: pointer;
     
 }
@@ -2503,7 +2510,7 @@ a {
     
     /* height: 100%; */
     z-index: 1;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .moderation_Mockup_screen.standby{
@@ -2728,7 +2735,7 @@ a {
 #Food_sharing {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     position: relative;
     background-color: #ECEBE9;
     width: 100%;
@@ -2780,6 +2787,7 @@ a {
 .sharing_arrow.A {
     top: 59%;
     left: 88%;
+    z-index: 2;
 }
 
 .sharing_arrow.B {
@@ -2788,8 +2796,24 @@ a {
 }
 
 .sharing_Mockup {
+    position: relative;
     height: 100%;
+    aspect-ratio:9/18;
 }
+
+.sharing_Mockup_img{
+    position: absolute;
+    width:100%;
+}
+
+.sharing_Mockup_img.sub{
+   animation:opacity-on-of linear 3s 1s infinite alternate;
+}
+
+
+
+
+
 
 .sharing_disc_box {
     position: relative;
@@ -2919,7 +2943,6 @@ a {
     padding: 5vw;
     padding-top: 10vh;
     background-color: #ECEBE9;
-    margin-top: 20vh;
 }
 
 .capy_line.look {
@@ -3226,4 +3249,21 @@ a {
   100% {
     transform: rotateY(360deg);
   }
+}
+
+@keyframes opacity-on-of{
+0%{
+    opacity:1;
+
+}
+25%{
+    opacity:1;
+}
+
+
+50%{opacity:0;}
+100%{
+    opacity:0;
+}
+
 }

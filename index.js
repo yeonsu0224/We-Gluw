@@ -394,22 +394,39 @@ const Mockup_screen = document.querySelector('.Iphone_MockUp')
 
 let Mockup_screen_num = 0
 
-Mockup_screen.addEventListener("click", () => {
+
+
+setInterval( () => {
 
     if(Mockup_screen_num == 5){
-        Mockup_screen_num = 0
-    }
 
-    
-    moderation_Mockup_screens[Mockup_screen_num].classList.add('outLeft')
+        
+        Mockup_screen_num = 0
+        moderation_Mockup_screens.forEach(screen=>{
+            screen.classList.remove('outLeft')
+            screen.classList.add("standby")
+            
+        })
+        moderation_Mockup_screens[0].classList.remove("standby")
+         
+
+
+
+
+    }else{
+         moderation_Mockup_screens[Mockup_screen_num].classList.add('outLeft')
 
     Mockup_screen_num++;
 
     moderation_Mockup_screens[Mockup_screen_num].classList.remove("standby")
 
 
+    }
 
-})
+    
+   
+
+}, 2000)
 
 let moderation_screen_pos = 0
 let moderation_bg_pos = 225
