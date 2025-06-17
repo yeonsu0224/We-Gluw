@@ -2877,11 +2877,18 @@ a {
     font-weight: 400;
 }
 
-.sharing_box svg {
+.sharing_box_svg.A {
+    position: absolute;
+    bottom: 1.5vw;
+    right: 55%;
+}
+
+.sharing_box_svg.B {
     position: absolute;
     bottom: 1.5vw;
     right: 1.5vw;
 }
+
 
 .Exclamation_icon {
     height: 30%;
