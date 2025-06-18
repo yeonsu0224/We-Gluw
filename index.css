@@ -623,10 +623,32 @@ a {
 .tutorialMessage.video{
     top:8.5%;
     cursor: pointer;
+    border-radius:20px;
+    border: #000000 3px solid;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.5s ease;
+}
+
+.tutorialMessage.video::after{
+    position: absolute;
+    content: "";
+    top:130%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 33px 0px 33px;
+    border-color: #000000 transparent transparent transparent;
+    transition: all 0.5s ease;
+
 }
 
 .tutorialMessage.video:hover{
     background: rgba(255, 255, 255, 1);
+}
+
+.tutorialMessage.video:hover::after{
+    top:140%;
 }
 
 .Interaction_panel_bg_img{
