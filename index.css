@@ -1893,7 +1893,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    width: 19vw;
+    width: 18vw;
     height: auto;
     padding: 1vw;
     border: #000000 solid 1.2px;
@@ -1946,6 +1946,7 @@ a {
     font-size: clamp(14px, 1vw, 15px);
     font-weight: 400;
     height: 2vw;
+    margin-top:-7%;
 }
 
 .App_disc_text {
