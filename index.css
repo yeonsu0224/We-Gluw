@@ -1957,18 +1957,18 @@ a {
 .App_disc_box_icon {
     position: absolute;
     bottom: 14%;
-    right: -1.1vw;
+    right: 5%;
     width: 6.5vw;
     height: auto;
 }
 
 .App_disc_box_icon.C {
-    right: -0.9vw;
+    right: 5%;
 }
 
 .App_disc_box_icon.D {
     bottom: 8%;
-    right: -0.7vw;
+   right: 5%;
 }
 
 .App_disc_box_Arrow {
