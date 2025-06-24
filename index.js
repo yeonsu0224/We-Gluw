@@ -1,6 +1,6 @@
 const introVideo = document.getElementById("video");
 
-introVideo.playbackRate = 2;
+introVideo.playbackRate = 1.5;
 
 const videoSection = document.getElementById("introVideo_wrap");
 
