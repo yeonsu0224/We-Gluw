@@ -2047,6 +2047,7 @@ a {
 
 .App_RTL_wrap img {
     width: 20vw;
+    max-width:350px;
     height: auto;
 }
 
@@ -2097,7 +2098,7 @@ a {
     justify-content: center;
     width: 23vw;
     height: auto;
-    bottom: -12vw;
+    bottom: -22vh;
     padding: 1vw;
     padding-top: 0.8vh;
     padding-bottom: 0.8vh;
