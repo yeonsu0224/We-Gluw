@@ -2059,7 +2059,7 @@ a {
     position: absolute;
     bottom: calc(100% + 3vh);
     width: 120%;
-    height: 10vh;
+    height: 15vh;
     font-size: clamp(16px, 1vw, 18px);
     font-weight: 500;
     line-height: 140%;
@@ -3269,6 +3269,7 @@ a {
 
 .disc_text_box_star{
      transform-origin: center;
+     min-width: none;
   transform-box: fill-box;
   transform-style: preserve-3d;
   animation: rotateY 3s ease-out forwards infinite;
